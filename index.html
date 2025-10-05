@@ -2066,8 +2066,11 @@
                 </div>
                 
                 <div class="contact-form">
-    <form name="contact" method="POST" data-netlify="true" netlify action="/success.html">
+    <form name="contact" method="POST" netlify data-netlify-honeypot="bot-field" action="success.html">
         <input type="hidden" name="form-name" value="contact">
+        <p style="display: none;">
+            <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
         
         <div class="form-group">
             <label for="name" class="form-label">Full Name</label>
