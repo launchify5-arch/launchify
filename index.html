@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launchify | Luxury Landing Pages That Convert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            --emerald-dark: #0a2e1f;
+            --emerald-medium: #0d5035;
+            --emerald-light: #10b981;
+            --emerald-bright: #34d399;
+            --emerald-glow: rgba(16, 185, 129, 0.3);
+            --emerald-glow-strong: rgba(16, 185, 129, 0.6);
+            --black: #111111;
+            --black-light: #1a1a1a;
+            --black-lighter: #222222;
+            --gold: #d4af37;
+            --gold-light: #f4e4a6;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --white: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray: #888888;
+            --gray-dark: #444444;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-slow: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+            --transition-fast: all 0.2s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 40px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 10px 30px rgba(16, 185, 129, 0.2);
+            --shadow-glow-strong: 0 15px 40px rgba(16, 185, 129, 0.4);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --section-padding: 120px 0;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white);
+            background-color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--emerald-light) 0%, var(--emerald-bright) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emerald-medium) 0%, var(--emerald-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow-strong);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--emerald-light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--black);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--emerald-light);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 46, 31, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--emerald-light) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+          logo
+        .-icon {
+            font-size: 1.8rem;
+            color: var(--emerald-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--emerald-light), var(--gold));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .mobile-toggle:hover {
+            background: var(--emerald-light);
+            color: var(--black);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--black) 0%, var(--emerald-dark) 100%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--emerald-glow);
+            filter: blur(60px);
+            opacity: 0.5;
+        }
+
+        .hero-bg-element:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 10%;
+            animation: float 18s infinite ease-in-out;
+        }
+
+        .hero-bg-element:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            top: 60%;
+            right: 10%;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        .hero-bg-element:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            bottom: 10%;
+            left: 20%;
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .hero-bg-element:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            top: 20%;
+            right: 20%;
+            animation: float 20s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) scale(1.05) rotate(5deg);
+            }
+            66% {
+                transform: translateY(10px) scale(0.95) rotate(-5deg);
+            }
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator i {
+            font-size: 1.5rem;
+            color: var(--emerald-light);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: var(--black-light);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-lg);
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--emerald-light), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .about-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-glow-strong);
+            border-color: var(--emerald-light);
+        }
+
+        .about-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--emerald-light);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            transition: var(--transition);
+        }
+
+        .about-card:hover .about-icon {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .about-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-card p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .portfolio-item {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            position: relative;
+            height: 450px;
+            transition: var(--transition);
+            background: var(--black-lighter);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-glow-strong);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2.5rem;
+            background: linear-gradient(transparent, rgba(10, 46, 31, 0.95));
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.08);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+
+        .portfolio-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .portfolio-cta {
+            display: flex;
+            justify-content: center !important;
+            margin-top: 4rem;
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            background: var(--black-light);
+            position: relative;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--emerald-medium), var(--gold));
+            opacity: 0.3;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--emerald-medium) 0%, var(--emerald-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .process-content {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .process-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-content p {
+            color: var(--gray-light);
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            position: relative;
+        }
+
+        .testimonials-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 2rem;
+        }
+
+        .testimonial-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-lg);
+            padding: 3.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-content:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-quote {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--gray-light);
+            position: relative;
+        }
+
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--emerald-light);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--emerald-light);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .testimonial-avatar:hover {
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .testimonial-info {
+            text-align: left;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gray-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .slider-dot:after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--emerald-light);
+            transform: scale(1.2);
+        }
+
+        .slider-dot.active:after {
+            border-color: var(--emerald-light);
+        }
+
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            pointer-events: none;
+        }
+
+        .slider-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            pointer-events: all;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-arrow:hover {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: scale(1.1);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            background: var(--black-light);
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-card {
+            display: flex;
+            gap: 2rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--emerald-light);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--emerald-light);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: rotate(10deg);
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-content p {
+            color: var(--gray-light);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            background: linear-gradient(135deg, var(--emerald-dark) 0%, var(--black) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--gray-light);
+        }
+
+        .cta-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .cta-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--emerald-glow);
+            filter: blur(60px);
+            opacity: 0.4;
+        }
+
+        .cta-bg-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: 10%;
+        }
+
+        .cta-bg-element:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            bottom: -125px;
+            right: 10%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--emerald-light);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .contact-method:hover .contact-icon {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: scale(1.1);
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .contact-details p {
+            color: var(--gray-light);
+            margin-bottom: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: var(--emerald-light);
+            color: var(--black);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-lg);
+            padding: 3.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--gray-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--emerald-light);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            margin-top: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--black-light);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--emerald-light);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--emerald-light) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--emerald-light);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--emerald-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            :root {
+                --container-width: 1000px;
+            }
+            
+            .hero h1 {
+                font-size: 4.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 46, 31, 0.98);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-cta {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 2rem;
+                margin-top: 1rem;
+            }
+
+            .nav-cta .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider-arrows {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-card,
+            .feature-card,
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            .testimonial-content {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .btn {
+                padding: 15px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ===== ADDITIONAL LUXURY EFFECTS ===== */
+        .luxury-glow {
+            position: relative;
+        }
+
+        .luxury-glow:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--emerald-light), var(--gold), var(--emerald-light), var(--gold));
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .luxury-glow:hover:before {
+            opacity: 1;
+            animation: glow 2s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: blur(10px) brightness(1);
+            }
+            50% {
+                filter: blur(10px) brightness(1.5);
+            }
+            100% {
+                filter: blur(10px) brightness(1);
+            }
+        }
+
+        .text-emerald {
+            color: var(--emerald-light);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Loading animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--emerald-light) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--emerald-light), var(--gold));
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--emerald-medium), var(--emerald-light));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--emerald-light), var(--gold));
+        }
+
+        /* Selection color */
+        ::selection {
+            background: rgba(16, 185, 129, 0.3);
+            color: var(--white);
+        }
+
+        /* Focus outline */
+        *:focus {
+            outline: 2px solid var(--emerald-light);
+            outline-offset: 2px;
+        }
+
+    /* === MOBILE BUTTON FIXES === */
+@media (max-width: 768px) {
+    .btn {
+        padding: 14px 28px !important;
+        font-size: 0.9rem !important;
+        min-height: 50px !important;
+    }
+    
+    .hero-cta .btn {
+        padding: 16px 32px !important;
+        font-size: 1rem !important;
+    }
+    
+    .nav-cta .btn {
+        padding: 12px 24px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 12px 24px !important;
+        font-size: 0.85rem !important;
+        min-height: 45px !important;
+    }
+    
+    .hero-cta .btn {
+        padding: 14px 28px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* === MOBILE NAVIGATION FIX === */
+
+/* Hide desktop CTA button on mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+/* Show desktop CTA button on larger screens */
+@media (min-width: 769px) {
+    .desktop-only {
+        display: flex !important;
+    }
+    
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* Style the mobile menu CTA differently */
+.nav-cta-mobile {
+    background: linear-gradient(135deg, var(--emerald-medium) 0%, var(--emerald-light) 100%);
+    color: white !important;
+    padding: 12px 20px !important;
+    border-radius: 25px !important;
+    margin-top: 10px !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+
+.nav-cta-mobile:hover {
+    background: var(--emerald-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--black-light);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--emerald-light);
+    box-shadow: var(--shadow-glow);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--emerald-light) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.stat-label {
+    color: var(--gray-light);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Stats */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">Launchify</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-rocket logo-icon"></i>
+                    Launchify
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-only"><a href="#contact" class="nav-cta-mobile">Work With Us</a></li>
+                </ul>
+                
+                <div class="nav-cta desktop-only">
+                    <a href="#contact" class="btn btn-primary">Work With Us</a>
+                </div>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="hero-bg-elements">
+            <div class="hero-bg-element"></div>
+            <div class="hero-bg-element"></div>
+            <div class="hero-bg-element"></div>
+            <div class="hero-bg-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luxury Landing Pages That Convert Like $1M+ Products</h1>
+                <p>Elevate your brand with premium, conversion-optimized landing pages designed for startups, SaaS founders, and coaches who demand excellence and results.</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary luxury-glow">
+                        <i class="fas fa-eye"></i>
+                        View Our Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <span>Scroll to Explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Launchify?</h2>
+                <p>We combine luxury aesthetics with data-driven strategies to create landing pages that don't just look expensive—they perform like premium assets.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Launch</h3>
+                    <p>Go from concept to live premium landing page in days, not months. Our streamlined process ensures rapid deployment without compromising quality or attention to detail.</p>
+                </div>
+                
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Luxury Aesthetics</h3>
+                    <p>Every pixel is crafted with precision. Our designs communicate exclusivity, trust, and premium quality that converts visitors into high-value customers.</p>
+                </div>
+                
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Our landing pages consistently outperform industry standards, with conversion rates that justify the premium investment many times over through increased revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+<section class="stats-section section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Proven Results</h2>
+            <p>Numbers that speak louder than words</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="247">0</div>
+                <div class="stat-label">Average Conversion Increase</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" data-target="89">0</div>
+                <div class="stat-label">Client Satisfaction Rate</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" data-target="7">0</div>
+                <div class="stat-label">Days Average Delivery Time</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Premium Projects Delivered</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>A curated selection of premium landing pages we've crafted for visionary brands across industries.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="images/dopamine.webp" alt="Fintech SaaS Platform" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>The Dopamine Reset</h3>
+                        <p>A Game Changing E-Book</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">EdTech</span>
+                            <span class="portfolio-tag">E-Book</span>
+                            
+                        </div>
+                        <div class="portfolio-actions">
+                            <a href="dopamine-landing.html" class="btn btn-secondary">View Project</a>
+                            <a href="#" class="btn btn-outline">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="images/aura-os.png" alt="Executive Coaching" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Aura OS</h3>           
+                        <p>An Operating System</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">SaaS</span>
+                            <span class="portfolio-tag">AI</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <a href="aura-os.html" class="btn btn-secondary">View Project</a>
+                            <a href="#" class="btn btn-outline">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="images/cold-tub.webp" alt="Health Tech Startup" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>ArticFlow</h3>
+                        <p>Health Tech Startup</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Health Tech</span>
+                            <span class="portfolio-tag">Smart Treatment</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <a href="cold-tub.html" class="btn btn-secondary">View Project</a>
+                            <a href="#" class="btn btn-outline">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            <div class="portfolio-cta">
+                <a href="#contact" class="btn btn-primary luxury-glow">See Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a meticulous, client-focused approach to ensure every project exceeds expectations and delivers exceptional results.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="process-number">01</div>
+                    <div class="process-content">
+                        <h3>Discovery & Strategy</h3>
+                        <p>We begin by deeply understanding your business, target audience, and conversion goals. Through intensive workshops and research, we develop a comprehensive strategy that aligns with your brand vision and business objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">02</div>
+                    <div class="process-content">
+                        <h3>Design & Prototyping</h3>
+                        <p>Our design team creates stunning, conversion-focused mockups and interactive prototypes. We focus on luxury aesthetics, intuitive user experience, and persuasive design elements that guide visitors toward your desired actions.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">03</div>
+                    <div class="process-content">
+                        <h3>Development & Animation</h3>
+                        <p>Using cutting-edge technologies, we bring the designs to life with smooth animations, micro-interactions, and flawless functionality. Every element is optimized for performance and cross-device compatibility.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">04</div>
+                    <div class="process-content">
+                        <h3>Testing & Optimization</h3>
+                        <p>We conduct rigorous testing across devices, browsers, and user scenarios. Our conversion optimization experts analyze user behavior and make data-driven refinements to maximize performance and ROI.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="process-number">05</div>
+                    <div class="process-content">
+                        <h3>Launch & Support</h3>
+                        <p>We handle the seamless deployment of your luxury landing page and provide ongoing support to ensure continued success. Our relationship doesn't end at launch—we're committed to your long-term growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Hear from founders and executives who have transformed their conversion rates with our luxury landing pages.</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-track">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"Launchify transformed our 'Dopamine Reset' landing page into a sleek, premium experience. The design instantly grabs attention, and the optimized layout has noticeably boosted our sales and conversions. It’s not just beautiful — it actually works!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="images/review-1.png" alt="Alex Morgan">
+                            </div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">HK SAHAM</div>
+                                <div class="testimonial-role">Writer, Dopamine Reset</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"Working with Launchify to design our flagship landing page was an exceptional experience. They transformed AURA OS’s vision into a stunning, luxurious, and high-converting website that perfectly reflects our brand. Every detail exudes elegance, and the result has already elevated how clients perceive us. Launchify doesn’t just build pages — they craft experiences that make your product unforgettable."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="images/review-2.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Sarah Johnson</div>
+                                <div class="testimonial-role">Founder, Aura OS</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"The Launchify team understood our vision immediately. They delivered a landing page that increased our sales 48% in first month. Our Buyers impresed with our digital presence, and believe us as premium company which played a key role in our funding success."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="images/review-3.jpg" alt="Michael Chen">
+                            </div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Michael Chen</div>
+                                <div class="testimonial-role">CTO, ArticFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-arrows">
+                    <div class="slider-arrow slider-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-arrow slider-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Features</h2>
+                <p>Every Launchify landing page comes with a comprehensive suite of premium features designed to maximize conversions and elevate your brand.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Responsive Design</h3>
+                        <p>Flawless experience across all devices and screen sizes, with mobile-first approach ensuring optimal performance on smartphones and tablets.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized for speed with minimal load times, ensuring maximum conversion rates and superior user experience that keeps visitors engaged.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>SEO Optimized</h3>
+                        <p>Built with search engine optimization in mind, helping your landing page rank higher and attract qualified organic traffic from day one.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Secure & Reliable</h3>
+                        <p>Enterprise-grade security measures and reliable hosting ensure your landing page remains accessible and protected against threats.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Analytics Integration</h3>
+                        <p>Comprehensive analytics setup to track performance, user behavior, and conversion metrics with clear, actionable insights.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Continuous Optimization</h3>
+                        <p>Ongoing A/B testing and optimization based on real user data to continually improve performance and maximize your return on investment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="cta-bg-elements">
+            <div class="cta-bg-element"></div>
+            <div class="cta-bg-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="cta-content">
+                <h2>Launch Your Luxury Landing Page Today</h2>
+                <p>Stop settling for mediocre conversion rates. Elevate your digital presence with a landing page that communicates premium quality and drives exceptional results for your business.</p>
+                <a href="#contact" class="btn btn-primary luxury-glow">
+                    <i class="fas fa-paper-plane"></i>
+                    Work With Launchify
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your digital presence? Let's discuss how we can create a luxury landing page that elevates your brand and drives conversions.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>launchify5@gmail.com</p>
+                            <p>We typically respond within 2 hours during business days</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Follow Us</h3>
+                            <p>Stay connected through our social channels</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/launchify-in-81777b388" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+    <form name="contact" method="POST" data-netlify="true" netlify action="/success.html">
+        <input type="hidden" name="form-name" value="contact">
+        
+        <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="company" class="form-label">Company</label>
+            <input type="text" id="company" name="company" class="form-control" placeholder="Enter your company name">
+        </div>
+        
+        <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?">
+        </div>
+        
+        <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your project and goals..." required></textarea>
+        </div>
+        
+        <div class="form-submit">
+            <button type="submit" class="btn btn-primary luxury-glow">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+            </button>
+        </div>
+    </form>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">Launchify</a>
+                    <div class="footer-about">
+                        <p>We create luxury landing pages that convert like premium products for startups, SaaS founders, and coaches who demand excellence.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Landing Page Design</a></li>
+                        <li><a href="#">Conversion Optimization</a></li>
+                        <li><a href="#">UX/UI Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Brand Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <div class="footer-newsletter">
+                        <p>Subscribe to our newsletter for insights on luxury web design and conversion optimization.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Launchify. All rights reserved. Crafted with excellence for visionary brands.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const loadingProgress = document.getElementById('loadingProgress');
+            
+            // Simulate loading progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Hide loading screen after a short delay
+                    setTimeout(() => {
+                        loadingScreen.classList.add('hidden');
+                    }, 500);
+                }
+                loadingProgress.style.width = `${progress}%`;
+            }, 200);
+        });
+
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Testimonials Slider
+        const track = document.querySelector('.testimonials-track');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        let currentSlide = 0;
+
+        function goToSlide(slideIndex) {
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            // Update active dot
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex].classList.add('active');
+            
+            currentSlide = slideIndex;
+        }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+
+        // Add click events to arrows
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + dots.length) % dots.length;
+                goToSlide(currentSlide);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                goToSlide(currentSlide);
+            });
+        }
+
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            goToSlide(currentSlide);
+        }, 7000);
+
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                    document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+
+        // Parallax effect for hero background elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroElements = document.querySelectorAll('.hero-bg-element');
+            
+            heroElements.forEach((element, index) => {
+                const speed = 0.3 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.02}deg)`;
+            });
+        });
+
+        // Add loading animation to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('type') !== 'submit') {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 1500);
+                }
+            });
+        });
+
+        // Add subtle animation to cards on hover
+        document.querySelectorAll('.about-card, .feature-card, .portfolio-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = this.style.transform + ' rotate(1deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = this.style.transform.replace(' rotate(1deg)', '');
+            });
+        });
+
+        // Add typing effect to hero title (optional)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            
+            typing();
+        }
+
+        // Uncomment the line below if you want a typing effect on the hero title
+        // window.addEventListener('load', () => typeWriter(document.querySelector('.hero h1'), 'Luxury Landing Pages That Convert Like $1M+ Products'));
+
+        // Add counter animation to stats (if we had a stats section)
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = this.querySelector('.newsletter-input');
+            alert(`Thank you for subscribing with ${input.value}! You'll receive our luxury insights soon.`);
+            input.value = '';
+        });
+
+        // Add luxury hover effect to logo
+        document.querySelector('.logo').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        document.querySelector('.logo').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        // Add scroll progress indicator (optional)
+        function createScrollProgress() {
+            const progressBar = document.createElement('div');
+            progressBar.style.position = 'fixed';
+            progressBar.style.top = '0';
+            progressBar.style.left = '0';
+            progressBar.style.height = '3px';
+            progressBar.style.background = 'linear-gradient(90deg, var(--emerald-light), var(--gold))';
+            progressBar.style.width = '0%';
+            progressBar.style.zIndex = '9999';
+            progressBar.style.transition = 'width 0.2s ease';
+            document.body.appendChild(progressBar);
+            
+            window.addEventListener('scroll', function() {
+                const winHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset;
+                const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            });
+        }
+
+        // Uncomment the line below if you want a scroll progress indicator
+        // createScrollProgress();
+
+        // Add luxury cursor effect (optional)
+        function createLuxuryCursor() {
+            const cursor = document.createElement('div');
+            cursor.style.position = 'fixed';
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.borderRadius = '50%';
+            cursor.style.background = 'var(--emerald-light)';
+            cursor.style.pointerEvents = 'none';
+            cursor.style.zIndex = '9999';
+            cursor.style.mixBlendMode = 'difference';
+            cursor.style.opacity = '0';
+            cursor.style.transition = 'opacity 0.3s ease, transform 0.1s ease';
+            document.body.appendChild(cursor);
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+                cursor.style.opacity = '1';
+            });
+            
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+            });
+            
+            document.querySelectorAll('a, button, .portfolio-item, .about-card, .feature-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'scale(1.5)';
+                    cursor.style.background = 'var(--gold)';
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'scale(1)';
+                    cursor.style.background = 'var(--emerald-light)';
+                });
+            });
+        }
+
+        // Uncomment the line below if you want a luxury cursor effect
+        // createLuxuryCursor();
+
+        // Add page transition effects
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href && link.href.includes('#') && !link.href.endsWith('#')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    
+                    if (target) {
+                        // Add fade out effect to current section if needed
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+
+        // Add luxury sound effects (optional - would need audio files)
+        function playLuxurySound() {
+            // This would require actual audio files
+            // const sound = new Audio('luxury-click.mp3');
+            // sound.volume = 0.3;
+            // sound.play();
+        }
+
+        // Add the sound to buttons
+        document.querySelectorAll('.btn, .nav-links a, .logo').forEach(el => {
+            el.addEventListener('click', playLuxurySound);
+        });
+
+        // Add dynamic background effects based on time of day
+        function updateTimeBasedStyles() {
+            const hour = new Date().getHours();
+            const hero = document.querySelector('.hero');
+            
+            if (hour >= 6 && hour < 18) {
+                // Daytime - brighter emerald
+                document.documentElement.style.setProperty('--emerald-light', '#10b981');
+            } else {
+                // Nighttime - darker, more luxurious emerald
+                document.documentElement.style.setProperty('--emerald-light', '#0d9c6d');
+            }
+        }
+
+        // Uncomment the line below if you want time-based styling
+        // updateTimeBasedStyles();
+
+        // Add Easter egg - Konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.code);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join() === konamiSequence.join()) {
+                document.body.style.background = 'linear-gradient(135deg, #0a2e1f, #1a1a1a, #0d5035)';
+                setTimeout(() => {
+                    document.body.style.background = '';
+                }, 5000);
+                konamiCode = [];
+            }
+        });
+
+        // Add luxury particle effect to hero section (optional)
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.style.position = 'absolute';
+            particlesContainer.style.top = '0';
+            particlesContainer.style.left = '0';
+            particlesContainer.style.width = '100%';
+            particlesContainer.style.height = '100%';
+            particlesContainer.style.pointerEvents = 'none';
+            particlesContainer.style.zIndex = '1';
+            particlesContainer.style.overflow = 'hidden';
+            
+            document.querySelector('.hero').appendChild(particlesContainer);
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = Math.random() > 0.5 ? 'var(--emerald-light)' : 'var(--gold)';
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                
+                particlesContainer.appendChild(particle);
+                
+                // Animate particle
+                animateParticle(particle);
+            }
+            
+            function animateParticle(particle) {
+                const duration = Math.random() * 20 + 10;
+                const xMovement = (Math.random() - 0.5) * 100;
+                const yMovement = (Math.random() - 0.5) * 100;
+                
+                particle.animate([
+                    { transform: 'translate(0, 0)' },
+                    { transform: `translate(${xMovement}px, ${yMovement}px)` }
+                ], {
+                    duration: duration * 1000,
+                    iterations: Infinity,
+                    direction: 'alternate',
+                    easing: 'ease-in-out'
+                });
+            }
+        }
+
+        // Uncomment the line below if you want particle effects
+        // createParticles();
+
+        console.log('Launchify Luxury Landing Page initialized successfully!');
+        console.log('Total lines of code: ' + document.documentElement.outerHTML.split(/\r\n|\r|\n/).length);
+
+        // Animated Counter
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCount();
+            }
+        });
+
+        observer.observe(counter);
+    });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    animateCounters();
+});
+    </script>
+</body>
+</html>

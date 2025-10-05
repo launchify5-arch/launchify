@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA OS | The Operating System for Modern Empires</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        :root {
+            --obsidian: #0a0a0f;
+            --obsidian-light: #121218;
+            --obsidian-lighter: #1a1a24;
+            --aqua-mint: #00ffea;
+            --aqua-mint-dark: #00ccba;
+            --aqua-mint-light: #80fff4;
+            --champagne: #d4af37;
+            --champagne-light: #f0e6d2;
+            --champagne-dark: #b8941f;
+            --white: #ffffff;
+            --gray-light: #e0e0e0;
+            --gray: #888888;
+            --gray-dark: #444444;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 12px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 40px;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-bg-heavy: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-border-heavy: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --glass-shadow-heavy: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--obsidian);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+            cursor: default;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            text-shadow: var(--text-shadow);
+        }
+
+        p {
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            text-shadow: var(--text-shadow);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .container-wide {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            position: relative;
+            padding: 140px 0;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--aqua-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--aqua-mint), transparent);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            text-shadow: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--aqua-mint-dark) 100%);
+            color: var(--obsidian);
+            box-shadow: 0 4px 20px rgba(0, 255, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 255, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+            border-color: var(--aqua-mint);
+            box-shadow: 0 0 20px rgba(0, 255, 234, 0.2);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--champagne) 0%, var(--champagne-dark) 100%);
+            color: var(--obsidian);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-large {
+            padding: 20px 40px;
+            font-size: 1.1rem;
+            border-radius: var(--border-radius-lg);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .glass-card-heavy {
+            background: var(--glass-bg-heavy);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border-heavy);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--glass-shadow-heavy);
+        }
+
+        .glow {
+            position: relative;
+        }
+
+        .glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, transparent 30%, transparent 70%, var(--champagne) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .glow:hover::before {
+            opacity: 1;
+        }
+
+        .glow-static::before {
+            opacity: 0.5;
+        }
+
+        /* Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--obsidian);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .preloader-icon {
+            margin-right: 15px;
+            color: var(--aqua-mint);
+        }
+
+        .preloader-progress {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preloader-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--aqua-mint), var(--champagne));
+            transition: width 0.3s ease;
+        }
+
+        .preloader-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            margin-right: 12px;
+            color: var(--aqua-mint);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--gray-light);
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--aqua-mint);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--aqua-mint);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 255, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--aqua-mint);
+            opacity: 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--aqua-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--aqua-mint), transparent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-light);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            margin-top: 60px;
+        }
+
+        .dashboard-preview {
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: var(--border-radius-lg);
+            background: linear-gradient(135deg, rgba(0, 255, 234, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 100%);
+        }
+
+        .dashboard-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .dashboard-card:nth-child(2) {
+            grid-column: 3 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .dashboard-card:nth-child(3) {
+            grid-column: 1 / 3;
+            grid-row: 2 / 4;
+        }
+
+        .dashboard-card:nth-child(4) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .dashboard-card:nth-child(5) {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+
+        .dashboard-card:nth-child(6) {
+            grid-column: 3 / 5;
+            grid-row: 3 / 4;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 234, 0.05) 0%, transparent 70%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--aqua-mint);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--champagne) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--aqua-mint-dark) 100%);
+            color: var(--obsidian);
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--aqua-mint-dark) 100%);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-description {
+            color: var(--gray-light);
+        }
+
+        /* Demo Section */
+        .demo {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 234, 0.05) 0%, transparent 50%);
+        }
+
+        .demo-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .demo-content {
+            flex: 1;
+        }
+
+        .demo-title {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .demo-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+        }
+
+        .demo-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .ai-conversation {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .conversation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .ai-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--aqua-mint-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--obsidian);
+            font-size: 1.5rem;
+        }
+
+        .ai-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .ai-info p {
+            color: var(--aqua-mint);
+            font-size: 0.9rem;
+        }
+
+        .conversation-body {
+            margin-bottom: 30px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .conversation-body::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .conversation-body::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .conversation-body::-webkit-scrollbar-thumb {
+            background: var(--aqua-mint);
+            border-radius: 10px;
+        }
+
+        .message {
+            padding: 15px 20px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            max-width: 80%;
+            position: relative;
+            animation: messageAppear 0.3s ease-out;
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-ai {
+            background: rgba(0, 255, 234, 0.1);
+            border: 1px solid rgba(0, 255, 234, 0.2);
+            border-bottom-left-radius: 5px;
+        }
+
+        .message-user {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .conversation-input {
+            display: flex;
+            gap: 15px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: var(--transition-fast);
+        }
+
+        .input-field:focus {
+            border-color: var(--aqua-mint);
+            box-shadow: 0 0 0 2px rgba(0, 255, 234, 0.2);
+        }
+
+        .send-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua-mint) 0%, var(--aqua-mint-dark) 100%);
+            color: var(--obsidian);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 255, 234, 0.4);
+        }
+
+        /* Integration Section */
+        .integrations {
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+        }
+
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .integration-card {
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .integration-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .integration-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--champagne);
+        }
+
+        .integration-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pricing-card {
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 1px solid var(--champagne);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--champagne) 0%, var(--champagne-dark) 100%);
+            color: var(--obsidian);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--aqua-mint);
+            font-size: 1.5rem;
+        }
+
+        .pricing-title {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .pricing-feature {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray-light);
+        }
+
+        .pricing-feature:last-child {
+            border-bottom: none;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--gray-light);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--aqua-mint);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 234, 0.05) 0%, transparent 70%);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--glass-bg-heavy);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 1px solid var(--glass-border);
+            border-right: 1px solid var(--glass-border);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 150px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 234, 0.1) 0%, transparent 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--aqua-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-light);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            padding: 20px 50px;
+            font-size: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: var(--gray-light);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--aqua-mint);
+            color: var(--obsidian);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 80px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: var(--gray-light);
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--aqua-mint);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 234, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 234, 0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .features-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .integrations-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .footer-links {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid,
+            .pricing-grid,
+            .testimonials-grid,
+            .stats-grid,
+            .integrations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-preview {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle,
+            .cta-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .btn-large {
+                padding: 16px 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <i class="fas fa-gem preloader-icon"></i>
+            AURA OS
+        </div>
+        <div class="preloader-progress">
+            <div class="preloader-progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="preloader-text" id="preloader-text">Initializing Luxury Experience</div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gem logo-icon"></i>
+                AURA OS
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#demo" class="nav-link">Demo</a></li>
+                    <li><a href="#integrations" class="nav-link">Integrations</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="demo.html" class="btn btn-secondary">Log In</a>
+                <a href="demo.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="particles-container" id="particles-container"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">The Operating System for Modern Empires</h1>
+                <p class="hero-subtitle fade-in">Command your company in style. AURA OS is the AI-powered luxury control center for founders, investors, and creators who demand excellence.</p>
+                <div class="hero-actions fade-in">
+                    <a href="demo.html" class="btn btn-primary btn-large">Request Private Access</a>
+                    <a href="demo.html" class="btn btn-secondary btn-large">Watch Demo</a>
+                </div>
+                <div class="hero-visual fade-in">
+                    <div class="dashboard-preview glow">
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card"></div>
+                            <div class="dashboard-card"></div>
+                            <div class="dashboard-card"></div>
+                            <div class="dashboard-card"></div>
+                            <div class="dashboard-card"></div>
+                            <div class="dashboard-card"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card glow fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="stat-number" data-count="99">0</div>
+                    <div class="stat-label">Uptime Percentage</div>
+                </div>
+                <div class="stat-card glass-card glow fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="2500">0</div>
+                    <div class="stat-label">Elite Users</div>
+                </div>
+                <div class="stat-card glass-card glow fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number" data-count="47">0</div>
+                    <div class="stat-label">Avg. Efficiency Gain</div>
+                </div>
+                <div class="stat-card glass-card glow fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Designed for Excellence</h2>
+                <p class="section-subtitle">Every feature crafted with precision, elegance, and intelligence for those who build empires.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Command Center</h3>
+                    <p class="feature-description">Your intelligent assistant that anticipates needs, automates workflows, and provides strategic insights.</p>
+                </div>
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Wealth View</h3>
+                    <p class="feature-description">A holistic financial dashboard that transforms complex data into elegant, actionable insights.</p>
+                </div>
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Team Control</h3>
+                    <p class="feature-description">Orchestrate your team with precision tools that enhance collaboration while maintaining elegance.</p>
+                </div>
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Privacy by Design</h3>
+                    <p class="feature-description">Bank-level security and privacy controls that protect your empire without compromising experience.</p>
+                </div>
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Performance Engine</h3>
+                    <p class="feature-description">Lightning-fast processing and real-time analytics that keep you ahead of the curve.</p>
+                </div>
+                <div class="feature-card glass-card glow fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="feature-title">Custom Aesthetics</h3>
+                    <p class="feature-description">Personalize your interface with premium themes that reflect your unique style and brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content slide-in-left">
+                    <h2 class="demo-title">Experience Intelligence</h2>
+                    <p class="demo-subtitle">Interact with AURA, your AI assistant that understands context, anticipates needs, and executes with precision.</p>
+                    <div class="demo-features">
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Natural language processing</span>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Predictive analytics</span>
+                        </div>
+                        <div class="demo-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multi-platform integration</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="demo.html" class="btn btn-primary">Start Your Journey</a>
+                    </div>
+                </div>
+                <div class="demo-visual slide-in-right">
+                    <div class="ai-conversation glass-card">
+                        <div class="conversation-header">
+                            <div class="ai-avatar pulse">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="ai-info">
+                                <h4>AURA Assistant</h4>
+                                <p>Online & Ready</p>
+                            </div>
+                        </div>
+                        <div class="conversation-body" id="conversation-body">
+                            <div class="message message-ai">
+                                <p>Good morning. I've analyzed Q3 performance and identified three key opportunities for growth. Would you like me to prepare a detailed report?</p>
+                            </div>
+                            <div class="message message-user">
+                                <p>Yes, please. Focus on the European market expansion.</p>
+                            </div>
+                            <div class="message message-ai">
+                                <p>Understood. I'm compiling data from our German and French operations now. The report will be ready in 2 minutes.</p>
+                            </div>
+                        </div>
+                        <div class="conversation-input">
+                            <input type="text" class="input-field" id="conversation-input" placeholder="Ask AURA anything...">
+                            <button class="send-btn" id="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="integrations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Seamless Integration</h2>
+                <p class="section-subtitle">AURA OS connects with the tools you already use, creating a unified ecosystem for your business.</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-slack"></i>
+                    </div>
+                    <div class="integration-name">Slack</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-salesforce"></i>
+                    </div>
+                    <div class="integration-name">Salesforce</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="integration-name">Google Workspace</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="integration-name">Microsoft 365</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-shopify"></i>
+                    </div>
+                    <div class="integration-name">Shopify</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-stripe"></i>
+                    </div>
+                    <div class="integration-name">Stripe</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fab fa-hubspot"></i>
+                    </div>
+                    <div class="integration-name">HubSpot</div>
+                </div>
+                <div class="integration-card glass-card glow fade-in">
+                    <div class="integration-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="integration-name">Tableau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Exclusive Tiers</h2>
+                <p class="section-subtitle">Select the experience that matches your ambition. Every tier delivers uncompromising quality.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass-card glow fade-in">
+                    <div class="pricing-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="pricing-title">Elite</h3>
+                    <div class="pricing-price">$199<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">Core AURA Dashboard</li>
+                        <li class="pricing-feature">Basic AI Assistant</li>
+                        <li class="pricing-feature">Standard Analytics</li>
+                        <li class="pricing-feature">5 Team Members</li>
+                        <li class="pricing-feature">Email Support</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="pricing-card glass-card glow fade-in featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="pricing-title">Venture</h3>
+                    <div class="pricing-price">$499<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">Advanced AURA Dashboard</li>
+                        <li class="pricing-feature">Premium AI Assistant</li>
+                        <li class="pricing-feature">Advanced Analytics</li>
+                        <li class="pricing-feature">20 Team Members</li>
+                        <li class="pricing-feature">Priority Support</li>
+                        <li class="pricing-feature">Custom Integrations</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card glass-card glow fade-in">
+                    <div class="pricing-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="pricing-title">Private Edition</h3>
+                    <div class="pricing-price">Custom</div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">Fully Customized Experience</li>
+                        <li class="pricing-feature">Dedicated AI Training</li>
+                        <li class="pricing-feature">White-Glove Onboarding</li>
+                        <li class="pricing-feature">Unlimited Team Members</li>
+                        <li class="pricing-feature">24/7 Concierge Support</li>
+                        <li class="pricing-feature">Personal Security Audit</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-gold">Request Private Setup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Visionaries</h2>
+                <p class="section-subtitle">Leaders who shape industries rely on AURA OS to power their empires.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card glow fade-in">
+                    <p class="testimonial-text">"AURA OS transformed how we operate. The elegance matches the power, and our productivity has increased by 40% since implementation."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Alexander Vance</h4>
+                            <p>CEO, Vance Capital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card glow fade-in">
+                    <p class="testimonial-text">"Finally, a business OS that doesn't sacrifice aesthetics for functionality. My entire team loves working with AURA every day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophia Chen</h4>
+                            <p>Founder, Nova Industries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card glow fade-in">
+                    <p class="testimonial-text">"The AI insights alone have paid for our subscription ten times over. This isn't just software—it's a competitive advantage."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Marcus Thorne</h4>
+                            <p>Investor, Apex Ventures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about the AURA OS experience.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How does AURA OS differ from other business platforms?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>AURA OS combines luxury design with cutting-edge AI in a way no other platform does. We focus on creating an experience that feels premium at every touchpoint while delivering unparalleled functionality.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Is my data secure with AURA OS?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We employ bank-level encryption, regular security audits, and privacy-by-design principles. Your data is stored in secure facilities with multiple layers of protection.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I customize the interface to match my brand?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, AURA OS offers extensive customization options. From color schemes to layout configurations, you can tailor the experience to reflect your brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What kind of support can I expect?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All plans include dedicated support, with response times varying by tier. Our Venture and Private Edition plans include priority support with dedicated account managers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How difficult is it to migrate from our current systems?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide comprehensive migration tools and dedicated support to ensure a smooth transition. Most clients complete migration within 2-4 weeks depending on complexity.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Is there a free trial available?</h4>
+                            <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a 14-day trial of our Elite plan so you can experience AURA OS firsthand. For Venture and Private Edition, we provide personalized demos and proof-of-concept implementations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2 class="cta-title fade-in">Your Empire Awaits</h2>
+            <p class="cta-subtitle fade-in">Join the elite founders, investors, and creators who have already transformed their operations with AURA OS. The future of business intelligence is here.</p>
+            <a href="demo.html" class="btn btn-primary cta-button fade-in">Enter the AURA Shop</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-gem logo-icon"></i>
+                        AURA OS
+                    </div>
+                    <p class="footer-description">The luxury operating system for modern empires. Command your company in style.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Demo</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AURA OS. All rights reserved. Designed for those who build empires.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize GSAP and ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Preloader
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.getElementById('preloader');
+            const progressBar = document.getElementById('progress-bar');
+            const preloaderText = document.getElementById('preloader-text');
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    progressBar.style.width = '100%';
+                    preloaderText.textContent = 'Experience Ready';
+                    
+                    setTimeout(() => {
+                        gsap.to(preloader, {
+                            opacity: 0,
+                            duration: 0.8,
+                            onComplete: () => {
+                                preloader.style.display = 'none';
+                                initAnimations();
+                            }
+                        });
+                    }, 500);
+                } else {
+                    progressBar.style.width = progress + '%';
+                    
+                    if (progress < 30) {
+                        preloaderText.textContent = 'Loading Core Systems';
+                    } else if (progress < 60) {
+                        preloaderText.textContent = 'Initializing AI Engine';
+                    } else if (progress < 90) {
+                        preloaderText.textContent = 'Preparing Luxury Interface';
+                    }
+                }
+            }, 200);
+        });
+
+        // Initialize all animations after preloader
+        function initAnimations() {
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Create particle system
+            createParticles();
+
+            // Animate stats counters
+            animateStats();
+
+            // Initialize FAQ functionality
+            initFAQ();
+
+            // Initialize AI conversation
+            initAIConversation();
+
+            // Scroll animations for elements
+            initScrollAnimations();
+
+            // Initialize floating elements
+            initFloatingElements();
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const navLinks = document.querySelector('.nav-links');
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        }
+
+        // Create particle system for hero section
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random properties
+                const size = Math.random() * 4 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                const opacity = Math.random() * 0.5 + 0.1;
+                
+                // Set styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.background = i % 3 === 0 ? 'var(--champagne)' : 'var(--aqua-mint)';
+                
+                container.appendChild(particle);
+                
+                // Animate particle
+                gsap.to(particle, {
+                    x: `+=${(Math.random() - 0.5) * 100}`,
+                    y: `+=${(Math.random() - 0.5) * 100}`,
+                    duration: duration,
+                    delay: delay,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+                
+                // Pulsing opacity
+                gsap.to(particle, {
+                    opacity: opacity * 0.3,
+                    duration: Math.random() * 3 + 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            }
+        }
+
+        // Animate stats counters
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 40);
+            });
+        }
+
+        // Initialize FAQ functionality
+        function initFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
+        // Initialize AI conversation
+        function initAIConversation() {
+            const sendButton = document.getElementById('send-btn');
+            const inputField = document.getElementById('conversation-input');
+            const conversationBody = document.getElementById('conversation-body');
+            
+            if (!sendButton || !inputField || !conversationBody) return;
+            
+            sendButton.addEventListener('click', sendMessage);
+            inputField.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = inputField.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    
+                    // Clear input
+                    inputField.value = '';
+                    
+                    // Simulate AI response after a delay
+                    setTimeout(() => {
+                        const responses = [
+                            "I understand your request. I'm processing that information now and will have insights for you shortly.",
+                            "That's an interesting question. Let me analyze the data and provide you with actionable insights.",
+                            "I've noted your preference. I'll adjust the system parameters accordingly.",
+                            "Based on current market trends, I recommend focusing on the European expansion as discussed earlier.",
+                            "I'm compiling the report now. It will be ready in approximately 2 minutes."
+                        ];
+                        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                        addMessage(randomResponse, 'ai');
+                    }, 1000);
+                }
+            }
+            
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message message-${sender}`;
+                messageDiv.innerHTML = `<p>${text}</p>`;
+                conversationBody.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                conversationBody.scrollTop = conversationBody.scrollHeight;
+            }
+        }
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            // Fix for disappearing sections - use more robust animation triggers
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            
+            animatedElements.forEach(element => {
+                gsap.fromTo(element, 
+                    { 
+                        opacity: 0, 
+                        y: element.classList.contains('slide-in-left') ? 0 : 
+                           element.classList.contains('slide-in-right') ? 0 : 50,
+                        x: element.classList.contains('slide-in-left') ? -50 : 
+                           element.classList.contains('slide-in-right') ? 50 : 0,
+                        scale: element.classList.contains('scale-in') ? 0.9 : 1
+                    }, 
+                    { 
+                        opacity: 1, 
+                        y: 0,
+                        x: 0,
+                        scale: 1,
+                        duration: 1, 
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 85%',
+                            end: 'bottom 20%',
+                            toggleActions: 'play none none none',
+                            markers: false // Set to true for debugging
+                        }
+                    }
+                );
+            });
+
+            // Enhanced animations for specific sections
+            gsap.utils.toArray('.feature-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { 
+                        opacity: 0, 
+                        y: 50,
+                        rotationY: 10
+                    }, 
+                    { 
+                        opacity: 1, 
+                        y: 0,
+                        rotationY: 0,
+                        duration: 0.8, 
+                        delay: i * 0.1,
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+
+            // Parallax effect for hero background
+            gsap.to('.hero-bg', {
+                yPercent: 30,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        }
+
+        // Initialize floating elements
+        function initFloatingElements() {
+            // Add floating animation to feature icons
+            const featureIcons = document.querySelectorAll('.feature-icon');
+            featureIcons.forEach((icon, index) => {
+                gsap.to(icon, {
+                    y: -10,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: index * 0.2
+                });
+            });
+
+            // Add floating animation to pricing cards
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach((card, index) => {
+                gsap.to(card, {
+                    y: -5,
+                    duration: 3,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: index * 0.3
+                });
+            });
+        }
+
+        // Add interactive cursor effects
+        document.addEventListener('mousemove', function(e) {
+            const cursorGlow = document.querySelector('.cursor-glow');
+            if (!cursorGlow) {
+                const newCursorGlow = document.createElement('div');
+                newCursorGlow.className = 'cursor-glow';
+                newCursorGlow.style.position = 'fixed';
+                newCursorGlow.style.width = '40px';
+                newCursorGlow.style.height = '40px';
+                newCursorGlow.style.background = 'radial-gradient(circle, var(--aqua-mint) 0%, transparent 70%)';
+                newCursorGlow.style.borderRadius = '50%';
+                newCursorGlow.style.pointerEvents = 'none';
+                newCursorGlow.style.zIndex = '9999';
+                newCursorGlow.style.mixBlendMode = 'screen';
+                newCursorGlow.style.opacity = '0.3';
+                document.body.appendChild(newCursorGlow);
+            }
+            
+            gsap.to('.cursor-glow', {
+                x: e.clientX - 20,
+                y: e.clientY - 20,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // ESC key to scroll to top
+            if (e.key === 'Escape') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Space bar to scroll down one viewport height
+            if (e.key === ' ' && !e.target.matches('input, textarea')) {
+                e.preventDefault();
+                window.scrollBy({
+                    top: window.innerHeight * 0.9,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        // Performance optimization - pause animations when not in viewport
+        ScrollTrigger.addEventListener("scrollEnd", () => {
+            const nowVisible = ScrollTrigger.getAll().filter(trigger => trigger.isActive);
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (!nowVisible.includes(trigger)) {
+                    trigger.animation.pause();
+                } else {
+                    trigger.animation.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

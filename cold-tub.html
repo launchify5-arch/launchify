@@ -1,0 +1,4133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ArcticFlow - The world's most advanced portable cold plunge tub. Experience elite recovery technology with precision temperature control, marine-grade construction, and white-glove installation.">
+    <meta name="keywords" content="cold plunge, recovery, wellness, luxury, portable, cryotherapy, athletic recovery">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="ArcticFlow - Premium Portable Cold Plunge Tub">
+    <meta property="og:description" content="The world's most advanced portable cold plunge tub. Precision engineering meets elite recovery technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arcticflow.example.com">
+    <!-- OPENGRAPH_IMAGE: social-preview-1200x630.jpg -->
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ArcticFlow - Premium Portable Cold Plunge Tub">
+    <meta name="twitter:description" content="Experience elite recovery technology with the world's most advanced portable cold plunge tub.">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <title>ArcticFlow | Premium Portable Cold Plunge Tub | $9,999+</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "ArcticFlow Premium Portable Cold Plunge Tub",
+        "image": [
+            "<!-- PRODUCT_IMAGE_1: arcticflow-product-hero-1.jpg -->",
+            "<!-- PRODUCT_IMAGE_2: arcticflow-product-hero-2.jpg -->",
+            "<!-- PRODUCT_IMAGE_3: arcticflow-product-hero-3.jpg -->"
+        ],
+        "description": "The world's most advanced portable cold plunge tub with precision temperature control, marine-grade construction, and white-glove installation service.",
+        "sku": "AF-PRO-001",
+        "mpn": "AF2024PRO",
+        "brand": {
+            "@type": "Brand",
+            "name": "ArcticFlow"
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.9",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Marcus Johnson"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "demo.html",
+            "priceCurrency": "USD",
+            "price": "9999",
+            "priceValidUntil": "2024-12-31",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "ArcticFlow Wellness Technologies"
+        }
+    }
+    </script>
+    
+    <style>
+        /* =========================================
+           CSS RESET & BASE STYLES
+           ========================================= */
+        :root {
+            /* Color System */
+            --color-bg-primary: #08090A;
+            --color-bg-secondary: #04263A;
+            --color-bg-tertiary: #0A151F;
+            --color-bg-glass: rgba(255, 255, 255, 0.05);
+            --color-bg-glass-dark: rgba(0, 0, 0, 0.3);
+            
+            --color-accent-primary: #3BE8D1;
+            --color-accent-secondary: #12C1B6;
+            --color-accent-tertiary: #00A3FF;
+            --color-accent-gold: #C9A15B;
+            --color-accent-gold-light: rgba(201, 161, 91, 0.2);
+            
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #B0B8C5;
+            --color-text-tertiary: #7E8A9C;
+            --color-text-accent: #3BE8D1;
+            
+            --color-border-light: rgba(255, 255, 255, 0.1);
+            --color-border-medium: rgba(255, 255, 255, 0.15);
+            --color-border-accent: rgba(59, 232, 209, 0.4);
+            
+            /* Typography Scale */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            --font-secondary: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            
+            --text-xs: 0.75rem;   /* 12px */
+            --text-sm: 0.875rem;  /* 14px */
+            --text-base: 1rem;    /* 16px */
+            --text-lg: 1.125rem;  /* 18px */
+            --text-xl: 1.25rem;   /* 20px */
+            --text-2xl: 1.5rem;   /* 24px */
+            --text-3xl: 1.875rem; /* 30px */
+            --text-4xl: 2.25rem;  /* 36px */
+            --text-5xl: 3rem;     /* 48px */
+            --text-6xl: 3.75rem;  /* 60px */
+            --text-7xl: 4.5rem;   /* 72px */
+            --text-8xl: 6rem;     /* 96px */
+            
+            /* Spacing Scale */
+            --space-1: 0.25rem;   /* 4px */
+            --space-2: 0.5rem;    /* 8px */
+            --space-3: 0.75rem;   /* 12px */
+            --space-4: 1rem;      /* 16px */
+            --space-5: 1.25rem;   /* 20px */
+            --space-6: 1.5rem;    /* 24px */
+            --space-8: 2rem;      /* 32px */
+            --space-10: 2.5rem;   /* 40px */
+            --space-12: 3rem;     /* 48px */
+            --space-16: 4rem;     /* 64px */
+            --space-20: 5rem;     /* 80px */
+            --space-24: 6rem;     /* 96px */
+            --space-32: 8rem;     /* 128px */
+            --space-40: 10rem;    /* 160px */
+            --space-48: 12rem;    /* 192px */
+            --space-56: 14rem;    /* 224px */
+            --space-64: 16rem;    /* 256px */
+            
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-base: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-2xl: 2rem;
+            --radius-full: 9999px;
+            
+            /* Shadows & Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 20px rgba(59, 232, 209, 0.3);
+            --shadow-glow-strong: 0 0 30px rgba(59, 232, 209, 0.5);
+            
+            /* Transitions & Animations */
+            --transition-base: all 0.3s ease;
+            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Z-index layers */
+            --z-negative: -1;
+            --z-base: 1;
+            --z-dropdown: 10;
+            --z-sticky: 100;
+            --z-modal: 1000;
+            --z-popover: 1010;
+            --z-tooltip: 1020;
+            --z-toast: 1030;
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+            color: var(--color-text-primary);
+        }
+
+        h1 {
+            font-size: var(--text-6xl);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: var(--text-5xl);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: var(--text-4xl);
+        }
+
+        h4 {
+            font-size: var(--text-3xl);
+        }
+
+        h5 {
+            font-size: var(--text-2xl);
+        }
+
+        h6 {
+            font-size: var(--text-xl);
+        }
+
+        p {
+            margin-bottom: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        a {
+            color: var(--color-accent-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        a:hover, a:focus {
+            color: var(--color-accent-secondary);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-6);
+        }
+
+        li {
+            margin-bottom: var(--space-2);
+            color: var(--color-text-secondary);
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4) var(--space-8);
+            font-family: var(--font-primary);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+            outline: none;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: var(--transition-base);
+        }
+
+        .btn:hover::before, .btn:focus::before {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            color: var(--color-bg-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow-strong);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-border-accent);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: rgba(59, 232, 209, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border-medium);
+        }
+
+        .btn-outline:hover, .btn-outline:focus {
+            border-color: var(--color-accent-primary);
+            background: rgba(59, 232, 209, 0.05);
+        }
+
+        /* Form Elements */
+        input, textarea, select {
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            padding: var(--space-4);
+            border: 1px solid var(--color-border-medium);
+            border-radius: var(--radius-base);
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            transition: var(--transition-base);
+            width: 100%;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--color-accent-primary);
+            box-shadow: 0 0 0 3px rgba(59, 232, 209, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: var(--space-2);
+            font-weight: 500;
+            color: var(--color-text-secondary);
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .container-wide {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .mb-0 { margin-bottom: 0; }
+        .mb-2 { margin-bottom: var(--space-2); }
+        .mb-4 { margin-bottom: var(--space-4); }
+        .mb-6 { margin-bottom: var(--space-6); }
+        .mb-8 { margin-bottom: var(--space-8); }
+        .mb-12 { margin-bottom: var(--space-12); }
+        .mb-16 { margin-bottom: var(--space-16); }
+        .mb-20 { margin-bottom: var(--space-20); }
+        .mb-24 { margin-bottom: var(--space-24); }
+
+        .mt-0 { margin-top: 0; }
+        .mt-2 { margin-top: var(--space-2); }
+        .mt-4 { margin-top: var(--space-4); }
+        .mt-6 { margin-top: var(--space-6); }
+        .mt-8 { margin-top: var(--space-8); }
+        .mt-12 { margin-top: var(--space-12); }
+        .mt-16 { margin-top: var(--space-16); }
+        .mt-20 { margin-top: var(--space-20); }
+        .mt-24 { margin-top: var(--space-24); }
+
+        .py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+        .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+        .py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+        .py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+        .py-20 { padding-top: var(--space-20); padding-bottom: var(--space-20); }
+        .py-24 { padding-top: var(--space-24); padding-bottom: var(--space-24); }
+        .py-32 { padding-top: var(--space-32); padding-bottom: var(--space-32); }
+        .py-40 { padding-top: var(--space-40); padding-bottom: var(--space-40); }
+
+        .px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+        .px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-full {
+            height: 100%;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: var(--color-bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border-light);
+        }
+
+        .glass-dark {
+            background: var(--color-bg-glass-dark);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--color-border-light);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 50%, var(--color-accent-tertiary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Section Spacing */
+        section {
+            position: relative;
+        }
+
+        /* =========================================
+           COMPONENT STYLES
+           ========================================= */
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: var(--z-sticky);
+            transition: var(--transition-base);
+            padding: var(--space-4) 0;
+        }
+
+        .header.scrolled {
+            background: rgba(8, 9, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+            padding: var(--space-2) 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-secondary);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: var(--space-2);
+            color: var(--color-accent-primary);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0 var(--space-4);
+        }
+
+        .nav-link {
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-base);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--color-text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-cta {
+            margin-left: var(--space-6);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text-primary);
+            font-size: var(--text-2xl);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--space-20);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--z-negative);
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(8, 9, 10, 0.9) 0%, rgba(4, 38, 58, 0.7) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-headline {
+            font-size: var(--text-7xl);
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+        }
+
+        .hero-subheadline {
+            font-size: var(--text-xl);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+            max-width: 500px;
+        }
+
+        .benefit-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .benefit-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-2) var(--space-4);
+            background: rgba(59, 232, 209, 0.1);
+            border: 1px solid rgba(59, 232, 209, 0.3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-accent-primary);
+        }
+
+        .benefit-chip svg {
+            margin-right: var(--space-2);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-visual {
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            position: relative;
+        }
+
+        .product-3d {
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* Features Section */
+        .features {
+            padding: var(--space-40) 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-16);
+        }
+
+        .section-subtitle {
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+        }
+
+        .feature-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            transition: var(--transition-base);
+            border: 1px solid var(--color-border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 232, 209, 0.1);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-6);
+        }
+
+        .feature-icon svg {
+            color: var(--color-accent-primary);
+        }
+
+        .feature-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .feature-description {
+            color: var(--color-text-secondary);
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: var(--space-40) 0;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+        }
+
+        .experience-card {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .experience-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .experience-card:hover .experience-image {
+            transform: scale(1.05);
+        }
+
+        .experience-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(8, 9, 10, 0.9) 0%, transparent 50%);
+        }
+
+        .experience-content {
+            position: relative;
+            padding: var(--space-8);
+            z-index: var(--z-base);
+        }
+
+        .experience-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .experience-description {
+            color: var(--color-text-secondary);
+        }
+
+        /* Tech Specs Section */
+        .tech-specs {
+            padding: var(--space-40) 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+
+        .spec-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid var(--color-border-light);
+        }
+
+        .spec-value {
+            font-size: var(--text-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+            color: var(--color-accent-primary);
+        }
+
+        .spec-label {
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-8);
+        }
+
+        .specs-table th, .specs-table td {
+            padding: var(--space-4) var(--space-6);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .specs-table th {
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .specs-table td {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            padding: var(--space-40) 0;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            border: 1px solid var(--color-border-light);
+            position: relative;
+        }
+
+        .comparison-card.premium {
+            border-color: var(--color-accent-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .comparison-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-2);
+        }
+
+        .comparison-price {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+        }
+
+        .comparison-price.old {
+            text-decoration: line-through;
+            color: var(--color-text-tertiary);
+            font-size: var(--text-xl);
+        }
+
+        .comparison-price.new {
+            color: var(--color-accent-primary);
+        }
+
+        .comparison-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+
+        .comparison-feature svg {
+            margin-right: var(--space-3);
+            flex-shrink: 0;
+        }
+
+        .comparison-feature.positive svg {
+            color: var(--color-accent-primary);
+        }
+
+        .comparison-feature.negative svg {
+            color: #FF6B6B;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: var(--space-40) 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+        }
+
+        .testimonial-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            border: 1px solid var(--color-border-light);
+        }
+
+        .testimonial-content {
+            margin-bottom: var(--space-6);
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: var(--space-4);
+            overflow: hidden;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: var(--space-1);
+        }
+
+        .testimonial-role {
+            font-size: var(--text-sm);
+            color: var(--color-text-tertiary);
+        }
+
+        .testimonial-verified {
+            display: flex;
+            align-items: center;
+            color: var(--color-accent-primary);
+            font-size: var(--text-sm);
+        }
+
+        .testimonial-verified svg {
+            margin-right: var(--space-1);
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+            opacity: 0.7;
+        }
+
+        .trust-logo {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Trust & Purchase Section */
+        .trust-purchase {
+            padding: var(--space-40) 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+        }
+
+        .trust-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            text-align: center;
+            border: 1px solid var(--color-border-light);
+            transition: var(--transition-base);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .trust-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 232, 209, 0.1);
+            border-radius: 50%;
+            margin: 0 auto var(--space-6);
+        }
+
+        .trust-icon svg {
+            color: var(--color-accent-primary);
+            font-size: var(--text-3xl);
+        }
+
+        .trust-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .trust-description {
+            color: var(--color-text-secondary);
+        }
+
+        /* Financing Calculator */
+        .financing-calculator {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            border: 1px solid var(--color-border-light);
+            max-width: 600px;
+            margin: var(--space-16) auto 0;
+        }
+
+        .calculator-title {
+            text-align: center;
+            margin-bottom: var(--space-6);
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+        }
+
+        .calculator-result {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: var(--space-6);
+            background: rgba(59, 232, 209, 0.1);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-6);
+        }
+
+        .monthly-price {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--color-accent-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .calculator-note {
+            color: var(--color-text-tertiary);
+            font-size: var(--text-sm);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: var(--space-40) 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+            border: 1px solid var(--color-border-light);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: var(--space-6);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: var(--text-2xl);
+            color: var(--color-accent-primary);
+            transition: var(--transition-base);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-6);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--color-text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 var(--space-6) var(--space-6);
+            max-height: 500px;
+        }
+
+        /* Sticky Purchase Module */
+        .sticky-purchase {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-bg-primary);
+            border-top: 1px solid var(--color-border-light);
+            padding: var(--space-4) 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: var(--z-sticky);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .sticky-purchase.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-purchase-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sticky-product-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .sticky-product-image {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            margin-right: var(--space-4);
+            overflow: hidden;
+        }
+
+        .sticky-product-name {
+            font-weight: 600;
+            margin-bottom: var(--space-1);
+        }
+
+        .sticky-product-price {
+            color: var(--color-accent-primary);
+            font-weight: 700;
+        }
+
+        .sticky-urgency {
+            display: flex;
+            align-items: center;
+            margin-right: var(--space-6);
+        }
+
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-1) var(--space-3);
+            background: #FF6B6B;
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-right: var(--space-4);
+        }
+
+        .stock-indicator {
+            font-size: var(--text-sm);
+            color: var(--color-text-tertiary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-bg-tertiary);
+            padding: var(--space-16) 0 var(--space-8);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-16);
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-secondary);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--color-bg-primary);
+            border-radius: 50%;
+            color: var(--color-text-secondary);
+            transition: var(--transition-base);
+        }
+
+        .social-link:hover {
+            color: var(--color-text-primary);
+            background: var(--color-accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-heading {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+            color: var(--color-text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-link {
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-link a {
+            color: var(--color-text-secondary);
+            transition: var(--transition-base);
+        }
+
+        .footer-link a:hover {
+            color: var(--color-text-primary);
+        }
+
+        .footer-bottom {
+            padding-top: var(--space-8);
+            border-top: 1px solid var(--color-border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .footer-legal a {
+            color: var(--color-text-tertiary);
+            font-size: var(--text-sm);
+        }
+
+        .footer-copyright {
+            color: var(--color-text-tertiary);
+            font-size: var(--text-sm);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 9, 10, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--color-border-light);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition-base);
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-text-primary);
+        }
+
+        .modal-title {
+            margin-bottom: var(--space-6);
+            text-align: center;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .form-success {
+            text-align: center;
+            padding: var(--space-8);
+            display: none;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 232, 209, 0.1);
+            border-radius: 50%;
+            margin: 0 auto var(--space-6);
+            color: var(--color-accent-primary);
+        }
+
+        /* Debug Panel */
+        .debug-panel {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+            padding: var(--space-4);
+            z-index: var(--z-tooltip);
+            display: none;
+        }
+
+        .debug-panel.active {
+            display: block;
+        }
+
+        .debug-toggle {
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-border-light);
+            border-right: none;
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+            width: 40px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+        }
+
+        .debug-title {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+            color: var(--color-text-primary);
+        }
+
+        .debug-controls {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .debug-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .debug-label {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .debug-slider {
+            width: 100px;
+        }
+
+        /* =========================================
+           RESPONSIVE STYLES
+           ========================================= */
+
+        /* Large Desktop */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+            
+            .hero-headline {
+                font-size: var(--text-8xl);
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: var(--text-5xl);
+            }
+            
+            h2 {
+                font-size: var(--text-4xl);
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-12);
+                text-align: center;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .benefit-chips {
+                justify-content: center;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .features-grid,
+            .experience-grid,
+            .testimonials-grid,
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .sticky-purchase-container {
+                flex-direction: column;
+                gap: var(--space-4);
+                text-align: center;
+            }
+            
+            .sticky-urgency {
+                margin-right: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: var(--text-4xl);
+            }
+            
+            h2 {
+                font-size: var(--text-3xl);
+            }
+            
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .nav {
+                display: none;
+                width: 100%;
+                order: 3;
+                margin-top: var(--space-4);
+            }
+            
+            .nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                margin: 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: var(--space-3) var(--space-4);
+            }
+            
+            .nav-cta {
+                margin-left: 0;
+                margin-top: var(--space-4);
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .features-grid,
+            .experience-grid,
+            .testimonials-grid,
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                justify-content: center;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding-top: var(--space-16);
+            }
+            
+            .py-40 {
+                padding-top: var(--space-24);
+                padding-bottom: var(--space-24);
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: var(--text-3xl);
+            }
+            
+            h2 {
+                font-size: var(--text-2xl);
+            }
+            
+            .hero-headline {
+                font-size: var(--text-4xl);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .trust-logos {
+                gap: var(--space-4);
+            }
+            
+            .trust-logo {
+                height: 30px;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --color-bg-primary: #000000;
+                --color-bg-secondary: #111111;
+                --color-text-primary: #FFFFFF;
+                --color-text-secondary: #CCCCCC;
+                --color-accent-primary: #00FFFF;
+            }
+            
+            .glass, .glass-dark {
+                backdrop-filter: none;
+                background: var(--color-bg-secondary);
+            }
+        }
+
+        /* =========================================
+           ANIMATION KEYFRAMES
+           ========================================= */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(59, 232, 209, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 232, 209, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(59, 232, 209, 0.5); }
+        }
+
+        /* =========================================
+           ACCESSIBILITY ENHANCEMENTS
+           ========================================= */
+        .focus-visible {
+            outline: 2px solid var(--color-accent-primary);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent-primary);
+            color: var(--color-bg-primary);
+            padding: var(--space-2) var(--space-4);
+            z-index: var(--z-popover);
+            text-decoration: none;
+            border-radius: 0 0 var(--radius-base) 0;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* High contrast focus styles */
+        @media (prefers-contrast: high) {
+            .focus-visible {
+                outline: 3px solid #00FFFF;
+                outline-offset: 3px;
+            }
+        }
+
+        /* =========================================
+   MOBILE FIXES
+   ========================================= */
+
+/* Fix for black sidebar on mobile */
+@media (max-width: 768px) {
+  /* Remove horizontal scrolling and ensure full width */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Ensure all containers take full width */
+  .container, .container-wide {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
+  
+  /* Fix for any elements causing overflow */
+  .hero-content, .features-grid, .experience-grid, 
+  .testimonials-grid, .trust-grid, .footer-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Reduce footer size for mobile */
+  .footer {
+    padding: var(--space-8) 0 var(--space-4);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  
+  .footer-brand {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: center;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  /* Additional mobile optimizations */
+  .hero {
+    padding-top: var(--space-12);
+  }
+  
+  .hero-headline {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+  }
+  
+  .hero-subheadline {
+    font-size: var(--text-base);
+  }
+  
+  .benefit-chips {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+  
+  .benefit-chip {
+    flex-shrink: 0;
+  }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-6) 0 var(--space-3);
+  }
+  
+  .footer-grid {
+    gap: var(--space-4);
+  }
+  
+  .trust-logos {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .trust-logo {
+    height: 30px;
+  }
+}
+
+/* Ensure no horizontal scroll on any device */
+* {
+  max-width: 100%;
+}
+
+/* Fix for any potential overflow issues */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== LUXURY ENTRANCE ANIMATIONS ===== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for sequential animation */
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+
+/* Special hero entrance */
+.hero-entrance {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    animation: heroEntrance 1.2s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+@keyframes heroEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Floating elements */
+.float-in {
+    animation: floatIn 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+@keyframes floatIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale in animation */
+.scale-in {
+    animation: scaleIn 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide in from sides */
+.slide-in-left {
+    animation: slideInLeft 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+    transform: translateX(-80px);
+}
+
+.slide-in-right {
+    animation: slideInRight 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Typewriter effect for hero text */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid var(--emerald-light);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--emerald-light) }
+}
+
+/* Glow pulse for important elements */
+.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4);
+    }
+}
+
+/* Page load animation */
+.page-load {
+    animation: pageLoad 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+@keyframes pageLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Product Image Styles */
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+    transition: transform 0.5s ease;
+}
+
+.product-3d:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* Experience Image Styles */
+.experience-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.experience-card:hover .experience-image {
+    transform: scale(1.05);
+}
+
+/* Ensure proper image loading */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Debug Panel (Hidden by default) -->
+    <div class="debug-panel" id="debug-panel">
+        <div class="debug-toggle" id="debug-toggle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+        </div>
+        <h3 class="debug-title">Animation Controls</h3>
+        <div class="debug-controls">
+            <div class="debug-control">
+                <span class="debug-label">Speed</span>
+                <input type="range" min="0.5" max="2" step="0.1" value="1" class="debug-slider" id="animation-speed">
+            </div>
+            <div class="debug-control">
+                <span class="debug-label">Parallax</span>
+                <input type="range" min="0" max="1" step="0.1" value="0.5" class="debug-slider" id="parallax-intensity">
+            </div>
+            <button class="btn btn-outline btn-sm" id="reset-animations">Reset All</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V7H9V5.5L3 7V9L9 10.5V12L5 13V15L9 13.5V15H15V13.5L21 15V13L15 11.5V10.5L21 9Z"/>
+                </svg>
+                ArcticFlow
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#tech-specs" class="nav-link">Tech Specs</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="demo.html" class="btn btn-primary" id="main-cta" aria-label="Buy the ArcticFlow Cold Plunge — Shop">Buy Now</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="hero-bg">
+            <!-- HERO_BACKGROUND: hero-bg-4k.jpg -->
+            <div class="hero-bg-overlay"></div>
+        </div>
+        
+        <div class="container-wide hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">
+                    The Ultimate <span class="gradient-text">Cold Plunge</span> Experience
+                </h1>
+                <p class="hero-subheadline">
+                    Precision-engineered for elite recovery. Experience the future of wellness with ArcticFlow's revolutionary portable cold plunge technology.
+                </p>
+                
+                <div class="benefit-chips">
+                    <div class="benefit-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Precision Temperature Control
+                    </div>
+                    <div class="benefit-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Marine-Grade Construction
+                    </div>
+                    <div class="benefit-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        White-Glove Installation
+                    </div>
+                    <div class="benefit-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        5-Year Warranty
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="demo.html" class="btn btn-primary" id="main-cta-hero" aria-label="Buy the ArcticFlow Cold Plunge — Shop">Buy Now — Shop</a>
+                    <button class="btn btn-secondary" id="reserve-demo">Reserve a Demo</button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="product-visual">
+                    <div class="product-3d" id="product-3d">
+                     <img src="images/arcticflow-product-hero.webp" alt="ArcticFlow Premium Cold Plunge Tub - Luxury portable recovery system" class="product-image" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engineered for Excellence</h2>
+                <p class="section-subtitle">
+                    Every component of the ArcticFlow cold plunge is meticulously designed and crafted for optimal performance, durability, and user experience.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Recovery Science</h3>
+                    <p class="feature-description">
+                        Optimized temperature range (38°F - 50°F) based on clinical research to maximize inflammation reduction and accelerate muscle recovery.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Chill Technology</h3>
+                    <p class="feature-description">
+                        Advanced compressor system cools water to target temperature in under 60 minutes with ±0.5°F precision and whisper-quiet operation.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Portability & Build</h3>
+                    <p class="feature-description">
+                        Aerospace-grade aluminum frame with carbon fiber reinforcement. Sets up in 15 minutes without tools and fits through standard doorways.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Materials & Warranty</h3>
+                    <p class="feature-description">
+                        Medical-grade stainless steel and marine polymer construction. Backed by a comprehensive 5-year warranty on all components.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Controls</h3>
+                    <p class="feature-description">
+                        Intuitive touchscreen with Wi-Fi connectivity. Schedule sessions, monitor usage, and control temperature remotely via our mobile app.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Ozone Sanitation</h3>
+                    <p class="feature-description">
+                        Built-in ozone generator eliminates 99.9% of bacteria and viruses without chemicals. Maintains water purity for up to 6 months between changes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transform Your Daily Routine</h2>
+                <p class="section-subtitle">
+                    Discover how the ArcticFlow cold plunge integrates seamlessly into your lifestyle, delivering profound benefits across multiple dimensions of wellness.
+                </p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <!-- EXPERIENCE_IMAGE_1: morning-reset-lifestyle.jpg -->
+                     <img src="images/morning-reset-lifestyle.webp" alt="Person enjoying morning cold plunge ritual" class="experience-image" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Morning Reset</h3>
+                        <p class="experience-description">
+                            Begin each day with mental clarity and energized focus. A 3-minute plunge activates your nervous system, boosting alertness and setting a powerful tone for the day ahead.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <!-- EXPERIENCE_IMAGE_2: post-workout-recovery.jpg -->
+                     <img src="images/post-workout-recovery.webp" alt="Athlete using cold plunge for post-workout recovery" class="experience-image" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Post-Workout Recovery</h3>
+                        <p class="experience-description">
+                            Accelerate muscle repair and reduce inflammation after intense training. Professional athletes report 40% faster recovery times with consistent cold plunge therapy.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <!-- EXPERIENCE_IMAGE_3: corporate-wellness.jpg -->
+                      <img src="images/corporate-wellness.webp" alt="Executive using cold plunge in corporate wellness setting" class="experience-image" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Corporate Wellness</h3>
+                        <p class="experience-description">
+                            Enhance executive performance and decision-making under pressure. Fortune 500 companies are integrating cold plunge facilities to boost employee resilience and creativity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Specs Section -->
+    <section class="tech-specs" id="tech-specs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Uncompromising Performance</h2>
+                <p class="section-subtitle">
+                    Engineered to the highest standards with precision components and advanced thermal technology.
+                </p>
+            </div>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-value" id="temp-range">38°F - 50°F</div>
+                    <div class="spec-label">Temperature Range</div>
+                </div>
+                
+                <div class="spec-card">
+                    <div class="spec-value" id="chill-time">< 60 min</div>
+                    <div class="spec-label">Time to Chill</div>
+                </div>
+                
+                <div class="spec-card">
+                    <div class="spec-value" id="r-value">R-25</div>
+                    <div class="spec-label">Insulation Rating</div>
+                </div>
+                
+                <div class="spec-card">
+                    <div class="spec-value" id="lifespan">15+ years</div>
+                    <div class="spec-label">Expected Lifespan</div>
+                </div>
+            </div>
+            
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Specification</th>
+                        <th>ArcticFlow Pro</th>
+                        <th>Industry Standard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Temperature Precision</td>
+                        <td>±0.5°F</td>
+                        <td>±3°F</td>
+                    </tr>
+                    <tr>
+                        <td>Noise Level</td>
+                        <td>45 dB</td>
+                        <td>65+ dB</td>
+                    </tr>
+                    <tr>
+                        <td>Energy Consumption</td>
+                        <td>1.2 kW/h</td>
+                        <td>2.5+ kW/h</td>
+                    </tr>
+                    <tr>
+                        <td>Water Capacity</td>
+                        <td>180 gallons</td>
+                        <td>120-150 gallons</td>
+                    </tr>
+                    <tr>
+                        <td>Setup Time</td>
+                        <td>15 minutes</td>
+                        <td>60+ minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td>5 years comprehensive</td>
+                        <td>1-2 years limited</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why ArcticFlow Stands Apart</h2>
+                <p class="section-subtitle">
+                    When you invest in wellness, the difference between premium and standard becomes apparent in every detail.
+                </p>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3 class="comparison-title">Standard Tubs</h3>
+                        <div class="comparison-price old">$2,000 - $4,000</div>
+                    </div>
+                    
+                    <ul class="comparison-features">
+                        <li class="comparison-feature negative">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            Basic temperature control (±5°F variance)
+                        </li>
+                        <li class="comparison-feature negative">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            Limited insulation (R-8 to R-12)
+                        </li>
+                        <li class="comparison-feature negative">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            No integrated sanitation system
+                        </li>
+                        <li class="comparison-feature negative">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            Limited 1-2 year warranty
+                        </li>
+                        <li class="comparison-feature negative">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            No professional installation
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card premium">
+                    <div class="comparison-header">
+                        <h3 class="comparison-title">ArcticFlow Pro</h3>
+                        <div class="comparison-price new">$9,999</div>
+                    </div>
+                    
+                    <ul class="comparison-features">
+                        <li class="comparison-feature positive">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Precision temperature control (±0.5°F)
+                        </li>
+                        <li class="comparison-feature positive">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Advanced marine-grade insulation (R-25)
+                        </li>
+                        <li class="comparison-feature positive">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Integrated ozone sanitation system
+                        </li>
+                        <li class="comparison-feature positive">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            5-year comprehensive warranty
+                        </li>
+                        <li class="comparison-feature positive">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            White-glove installation included
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <h3>Investment in Long-Term Wellness</h3>
+                <p class="section-subtitle">
+                    At approximately $2.74 per day over 10 years, the ArcticFlow represents one of the most valuable investments you can make in your health and performance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Elite Performers</h2>
+                <p class="section-subtitle">
+                    Professional athletes, executives, and wellness pioneers share their transformative experiences with ArcticFlow.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The ArcticFlow has revolutionized my recovery protocol. I'm training harder and recovering faster than ever before. This isn't a luxury—it's a necessity for peak performance."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_1: testimonial-athlete-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Marcus Johnson</div>
+                            <div class="testimonial-role">Professional Athlete, NBA</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a CEO, decision fatigue is real. The mental clarity and resilience I've gained from daily cold plunges is invaluable. The ArcticFlow's reliability and precision make it worth every penny."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_2: testimonial-executive-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sarah Chen</div>
+                            <div class="testimonial-role">CEO, Tech Startup</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I've tried every recovery modality available. The ArcticFlow's precise temperature control and rapid cooling set it apart. It's the only system I recommend to my clients."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_3: testimonial-trainer-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Dr. Michael Torres</div>
+                            <div class="testimonial-role">Sports Medicine Specialist</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The white-glove installation was exceptional. The team handled everything from placement to training. The ArcticFlow isn't just a product—it's a complete wellness solution."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_4: testimonial-client-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">James Wilson</div>
+                            <div class="testimonial-role">ArcticFlow Owner</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "After a serious injury, my recovery was plateauing. Incorporating the ArcticFlow into my rehabilitation protocol accelerated my progress beyond expectations."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_5: testimonial-recovery-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Elena Rodriguez</div>
+                            <div class="testimonial-role">Former Professional Dancer</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The build quality is exceptional. After two years of daily use, my ArcticFlow performs as flawlessly as day one. This is heirloom-grade equipment for wellness."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <!-- TESTIMONIAL_AVATAR_6: testimonial-longterm-1.jpg -->
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Robert Kim</div>
+                            <div class="testimonial-role">Early Adopter</div>
+                        </div>
+                        <div class="testimonial-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Testimonials Placeholder -->
+            <div class="text-center mt-16">
+                <h3>Hear Their Stories</h3>
+                <div class="flex justify-center gap-8 mt-8">
+                    <div class="relative w-64 h-36 rounded-xl overflow-hidden cursor-pointer">
+                        <!-- VIDEO_TESTIMONIAL_1: testimonial-video-1-poster.jpg -->
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="relative w-64 h-36 rounded-xl overflow-hidden cursor-pointer">
+                        <!-- VIDEO_TESTIMONIAL_2: testimonial-video-2-poster.jpg -->
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-logos">
+                <!-- TRUST_LOGO_1: nba-team-logo.png -->
+                <!-- TRUST_LOGO_2: olympic-committee-logo.png -->
+                <!-- TRUST_LOGO_3: fortune-500-company-logo.png -->
+                <!-- TRUST_LOGO_4: medical-institution-logo.png -->
+                <div class="text-lg font-semibold ml-8">Trusted by professionals worldwide</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Purchase Section -->
+    <section class="trust-purchase">
+        <div class="container">
+            <div class="section-header">
+                <h2>Purchase With Confidence</h2>
+                <p class="section-subtitle">
+                    We stand behind our product with comprehensive support, warranty protection, and flexible financing options.
+                </p>
+            </div>
+            
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">5-Year Warranty</h3>
+                    <p class="trust-description">
+                        Comprehensive protection covering all components including the compressor, electronics, and structural elements. No hidden fees or pro-rated coverage.
+                    </p>
+                </div>
+                
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">White-Glove Installation</h3>
+                    <p class="trust-description">
+                        Our certified technicians deliver, assemble, and test your ArcticFlow at your location. Includes personalized training on operation and maintenance.
+                    </p>
+                </div>
+                
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Flexible Financing</h3>
+                    <p class="trust-description">
+                        0% APR financing available for qualified buyers. Choose from 12, 24, or 36-month payment plans with no prepayment penalties.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Financing Calculator -->
+            <div class="financing-calculator">
+                <h3 class="calculator-title">Monthly Payment Calculator</h3>
+                <div class="calculator-form">
+                    <div>
+                        <label for="product-price">Product Price</label>
+                        <input type="number" id="product-price" value="9999" min="0" step="100">
+                    </div>
+                    <div>
+                        <label for="down-payment">Down Payment</label>
+                        <input type="number" id="down-payment" value="2000" min="0" step="100">
+                    </div>
+                    <div>
+                        <label for="loan-term">Loan Term (months)</label>
+                        <select id="loan-term">
+                            <option value="12">12 months</option>
+                            <option value="24" selected>24 months</option>
+                            <option value="36">36 months</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="interest-rate">Interest Rate (%)</label>
+                        <input type="number" id="interest-rate" value="0" min="0" max="20" step="0.1">
+                    </div>
+                    
+                    <div class="calculator-result">
+                        <div class="monthly-price" id="monthly-price">$333.29</div>
+                        <div class="calculator-note">Estimated monthly payment</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="demo.html" class="btn btn-primary btn-lg" id="main-cta-trust">Reserve Your ArcticFlow</a>
+                <p class="mt-4 text-color-text-tertiary">
+                    Limited white-glove installation slots available. Reserve today to secure priority scheduling.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-subtitle">
+                    Find answers to common questions about the ArcticFlow cold plunge experience.
+                </p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How does the ArcticFlow compare to traditional ice baths?</div>
+                    <div class="faq-answer">
+                        The ArcticFlow offers precise temperature control (±0.5°F), consistent cooling without ice, integrated sanitation, and energy-efficient operation. Traditional ice baths require constant monitoring, manual ice addition, and lack temperature consistency.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is the installation process?</div>
+                    <div class="faq-answer">
+                        Our white-glove service includes delivery, assembly, and testing at your location. We require a standard electrical outlet and level surface. The entire process takes approximately 2-3 hours, including personalized training on operation and maintenance.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much does it cost to operate?</div>
+                    <div class="faq-answer">
+                        With our advanced insulation and efficient compressor system, operating costs average $25-40 per month depending on local electricity rates and usage frequency. This is significantly lower than traditional chillers which can cost $80+ monthly.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What maintenance is required?</div>
+                    <div class="faq-answer">
+                        The integrated ozone system minimizes maintenance. We recommend checking water chemistry monthly and changing water every 4-6 months. The system includes self-diagnostic features and remote monitoring for proactive maintenance alerts.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is financing available?</div>
+                    <div class="faq-answer">
+                        Yes, we offer 0% APR financing for qualified buyers with terms of 12, 24, or 36 months. Applications are processed quickly with instant decisions in most cases. Leasing options are also available for commercial installations.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your return policy?</div>
+                    <div class="faq-answer">
+                        We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your ArcticFlow experience, we'll arrange pickup and provide a full refund. Installation fees are non-refundable once service is completed.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does delivery take?</div>
+                    <div class="faq-answer">
+                        Standard delivery is 2-4 weeks after order confirmation. Expedited shipping is available for an additional fee, reducing delivery time to 5-7 business days. International shipping times vary by destination.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can the ArcticFlow be used outdoors?</div>
+                    <div class="faq-answer">
+                        Yes, the ArcticFlow is designed for both indoor and outdoor use. The marine-grade construction and advanced insulation maintain performance in temperatures from -20°F to 110°F. We recommend using the included cover when not in use.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Purchase Module -->
+    <div class="sticky-purchase" id="sticky-purchase">
+        <div class="container sticky-purchase-container">
+            <div class="sticky-product-info">
+                <div class="sticky-product-image">
+                    <!-- PRODUCT_IMAGE_SMALL: product-thumbnail.jpg -->
+                </div>
+                <div>
+                    <div class="sticky-product-name">ArcticFlow Pro Cold Plunge</div>
+                    <div class="sticky-product-price">$9,999</div>
+                </div>
+            </div>
+            
+            <div class="sticky-urgency">
+                <div class="urgency-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Limited Stock
+                </div>
+                <div class="stock-indicator">Only 12 units left</div>
+            </div>
+            
+            <div class="sticky-cta">
+                <a href="demo.html" class="btn btn-primary" id="main-cta-sticky">Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V7H9V5.5L3 7V9L9 10.5V12L5 13V15L9 13.5V15H15V13.5L21 15V13L15 11.5V10.5L21 9Z"/>
+                        </svg>
+                        ArcticFlow
+                    </div>
+                    <p class="footer-description">
+                        Revolutionizing wellness through precision-engineered cold plunge technology. Experience the future of recovery.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.016 10.016 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.543l-.047-.02z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#features">Features</a></li>
+                        <li class="footer-link"><a href="#tech-specs">Tech Specs</a></li>
+                        <li class="footer-link"><a href="#pricing">Pricing</a></li>
+                        <li class="footer-link"><a href="#testimonials">Testimonials</a></li>
+                        <li class="footer-link"><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">Installation Guide</a></li>
+                        <li class="footer-link"><a href="#">User Manual</a></li>
+                        <li class="footer-link"><a href="#">Troubleshooting</a></li>
+                        <li class="footer-link"><a href="#">Warranty Claim</a></li>
+                        <li class="footer-link"><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">About Us</a></li>
+                        <li class="footer-link"><a href="#">Careers</a></li>
+                        <li class="footer-link"><a href="#">Press</a></li>
+                        <li class="footer-link"><a href="#">Blog</a></li>
+                        <li class="footer-link"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2024 ArcticFlow Wellness Technologies. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Request Modal -->
+    <div class="modal" id="demo-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            
+            <h2 class="modal-title">Reserve Your Demo</h2>
+            
+            <div class="modal-form" id="demo-form">
+                <div class="form-row">
+                    <div>
+                        <label for="demo-first-name">First Name</label>
+                        <input type="text" id="demo-first-name" required>
+                    </div>
+                    <div>
+                        <label for="demo-last-name">Last Name</label>
+                        <input type="text" id="demo-last-name" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="demo-email">Email Address</label>
+                    <input type="email" id="demo-email" required>
+                </div>
+                
+                <div>
+                    <label for="demo-phone">Phone Number</label>
+                    <input type="tel" id="demo-phone">
+                </div>
+                
+                <div class="form-row">
+                    <div>
+                        <label for="demo-city">City</label>
+                        <input type="text" id="demo-city" required>
+                    </div>
+                    <div>
+                        <label for="demo-state">State/Province</label>
+                        <input type="text" id="demo-state" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="demo-date">Preferred Demo Date</label>
+                    <input type="date" id="demo-date" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary w-full" id="demo-submit">Request Demo</button>
+                </div>
+            </div>
+            
+            <div class="form-success" id="demo-success">
+                <div class="success-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <h3>Demo Request Received</h3>
+                <p>Thank you for your interest in ArcticFlow. Our concierge team will contact you within 24 hours to confirm your demo appointment.</p>
+                <button class="btn btn-outline mt-6" id="demo-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // =========================================
+        // INITIALIZATION AND CONFIGURATION
+        // =========================================
+        
+        // Global configuration
+        const CONFIG = {
+            animationSpeed: 1,
+            parallaxIntensity: 0.5,
+            reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        };
+
+        // DOM Elements
+        const elements = {
+            // Navigation
+            header: document.getElementById('header'),
+            nav: document.getElementById('nav'),
+            mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
+            
+            // Hero
+            product3d: document.getElementById('product-3d'),
+            
+            // Modals
+            demoModal: document.getElementById('demo-modal'),
+            modalClose: document.getElementById('modal-close'),
+            demoForm: document.getElementById('demo-form'),
+            demoSuccess: document.getElementById('demo-success'),
+            demoSubmit: document.getElementById('demo-submit'),
+            demoClose: document.getElementById('demo-close'),
+            reserveDemo: document.getElementById('reserve-demo'),
+            
+            // Sticky purchase
+            stickyPurchase: document.getElementById('sticky-purchase'),
+            
+            // Debug panel
+            debugPanel: document.getElementById('debug-panel'),
+            debugToggle: document.getElementById('debug-toggle'),
+            animationSpeed: document.getElementById('animation-speed'),
+            parallaxIntensity: document.getElementById('parallax-intensity'),
+            resetAnimations: document.getElementById('reset-animations'),
+            
+            // Financing calculator
+            productPrice: document.getElementById('product-price'),
+            downPayment: document.getElementById('down-payment'),
+            loanTerm: document.getElementById('loan-term'),
+            interestRate: document.getElementById('interest-rate'),
+            monthlyPrice: document.getElementById('monthly-price'),
+            
+            // FAQ
+            faqItems: document.querySelectorAll('.faq-item'),
+            
+            // Counters
+            tempRange: document.getElementById('temp-range'),
+            chillTime: document.getElementById('chill-time'),
+            rValue: document.getElementById('r-value'),
+            lifespan: document.getElementById('lifespan')
+        };
+
+        // =========================================
+        // UTILITY FUNCTIONS
+        // =========================================
+        
+        // Debounce function for performance
+        function debounce(func, wait, immediate) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    timeout = null;
+                    if (!immediate) func(...args);
+                };
+                const callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func(...args);
+            };
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // Calculate monthly payment
+        function calculateMonthlyPayment(principal, annualRate, months) {
+            if (annualRate === 0) {
+                return principal / months;
+            }
+            
+            const monthlyRate = annualRate / 100 / 12;
+            return principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+        }
+
+        // Check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // =========================================
+        // ANIMATION CONTROLS
+        // =========================================
+        
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set global animation speed
+        gsap.globalTimeline.timeScale(CONFIG.animationSpeed);
+
+        // Update animation speed
+        function updateAnimationSpeed(value) {
+            CONFIG.animationSpeed = value;
+            gsap.globalTimeline.timeScale(value);
+        }
+
+        // Update parallax intensity
+        function updateParallaxIntensity(value) {
+            CONFIG.parallaxIntensity = parseFloat(value);
+        }
+
+        // Reset all animations
+        function resetAllAnimations() {
+            CONFIG.animationSpeed = 1;
+            CONFIG.parallaxIntensity = 0.5;
+            
+            if (elements.animationSpeed) elements.animationSpeed.value = 1;
+            if (elements.parallaxIntensity) elements.parallaxIntensity.value = 0.5;
+            
+            gsap.globalTimeline.timeScale(1);
+            
+            // Restart hero animations
+            initHeroAnimations();
+        }
+
+        // =========================================
+        // HERO ANIMATIONS
+        // =========================================
+        
+        function initHeroAnimations() {
+            if (CONFIG.reducedMotion) return;
+            
+            // Hero timeline
+            const heroTimeline = gsap.timeline();
+            
+            // Background fade in
+            heroTimeline.fromTo('.hero-bg-overlay', 
+                { opacity: 1 },
+                { opacity: 0.7, duration: 2, ease: "power2.inOut" }
+            );
+            
+            // Headline animation
+            heroTimeline.fromTo('.hero-headline', 
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
+                "-=1.5"
+            );
+            
+            // Subheadline animation
+            heroTimeline.fromTo('.hero-subheadline', 
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+                "-=1"
+            );
+            
+            // Benefit chips animation
+            heroTimeline.fromTo('.benefit-chip', 
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "back.out(1.7)" },
+                "-=0.5"
+            );
+            
+            // CTA buttons animation
+            heroTimeline.fromTo('.hero-cta', 
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+                "-=0.5"
+            );
+            
+            // Product visual animation
+            heroTimeline.fromTo('.product-3d', 
+                { scale: 0.8, opacity: 0, rotationY: 15 },
+                { scale: 1, opacity: 1, rotationY: 0, duration: 1.5, ease: "power2.out" },
+                "-=1"
+            );
+            
+            // CTA pulse animation
+            heroTimeline.to('#main-cta-hero', 
+                { 
+                    scale: 1.05, 
+                    duration: 0.5, 
+                    repeat: 1, 
+                    yoyo: true, 
+                    ease: "power2.inOut" 
+                },
+                "+=1"
+            );
+            
+            // Initialize Lottie animation if available
+            if (typeof lottie !== 'undefined') {
+                // LOTTIE_ANIMATION: product-rotation-animation.json
+                // This would be replaced with actual Lottie initialization
+            }
+            
+            // 3D tilt effect
+            if (elements.product3d && !CONFIG.reducedMotion) {
+                elements.product3d.addEventListener('mousemove', (e) => {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                    
+                    gsap.to(elements.product3d, {
+                        duration: 0.5,
+                        rotationY: xAxis * CONFIG.parallaxIntensity,
+                        rotationX: yAxis * CONFIG.parallaxIntensity,
+                        ease: "power2.out"
+                    });
+                });
+                
+                elements.product3d.addEventListener('mouseleave', () => {
+                    gsap.to(elements.product3d, {
+                        duration: 0.5,
+                        rotationY: 0,
+                        rotationX: 0,
+                        ease: "power2.out"
+                    });
+                });
+            }
+        }
+
+        // =========================================
+        // SCROLL ANIMATIONS
+        // =========================================
+        
+        function initScrollAnimations() {
+            if (CONFIG.reducedMotion) return;
+            
+            // Animate features on scroll
+            gsap.utils.toArray('.feature-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { y: 100, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 80%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+            // Animate experience cards
+            gsap.utils.toArray('.experience-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { y: 100, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        delay: i * 0.2,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+            // Animate spec cards with counters
+            gsap.utils.toArray('.spec-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.8,
+                        delay: i * 0.1,
+                        ease: "back.out(1.7)",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 80%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+            // Animate comparison cards
+            gsap.fromTo('.comparison-card', 
+                { x: i => i === 0 ? -100 : 100, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: '.comparison-grid',
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+            
+            // Animate testimonials
+            gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        delay: i * 0.1,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+            // Animate trust cards
+            gsap.utils.toArray('.trust-card').forEach((card, i) => {
+                gsap.fromTo(card, 
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        delay: i * 0.15,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+            // Animate FAQ items
+            gsap.utils.toArray('.faq-item').forEach((item, i) => {
+                gsap.fromTo(item, 
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.5,
+                        delay: i * 0.05,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 90%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+        }
+
+        // =========================================
+        // COUNTER ANIMATIONS
+        // =========================================
+        
+        function initCounterAnimations() {
+            if (CONFIG.reducedMotion) return;
+            
+            // Temperature range counter
+            ScrollTrigger.create({
+                trigger: elements.tempRange,
+                start: "top 80%",
+                onEnter: () => animateCounter(elements.tempRange, 0, 38, 50, "°F", 2000)
+            });
+            
+            // Chill time counter
+            ScrollTrigger.create({
+                trigger: elements.chillTime,
+                start: "top 80%",
+                onEnter: () => {
+                    gsap.fromTo(elements.chillTime,
+                        { textContent: 120 },
+                        {
+                            textContent: 60,
+                            duration: 2,
+                            snap: { textContent: 1 },
+                            onUpdate: function() {
+                                elements.chillTime.textContent = "< " + Math.ceil(this.targets()[0].textContent) + " min";
+                            }
+                        }
+                    );
+                }
+            });
+            
+            // R-value counter
+            ScrollTrigger.create({
+                trigger: elements.rValue,
+                start: "top 80%",
+                onEnter: () => animateCounter(elements.rValue, 0, 8, 25, "", 1500)
+            });
+            
+            // Lifespan counter
+            ScrollTrigger.create({
+                trigger: elements.lifespan,
+                start: "top 80%",
+                onEnter: () => animateCounter(elements.lifespan, 0, 5, 15, "+ years", 1800)
+            });
+        }
+        
+        function animateCounter(element, start, min, max, suffix, duration) {
+            gsap.fromTo(element,
+                { textContent: start },
+                {
+                    textContent: max,
+                    duration: duration / 1000,
+                    snap: { textContent: 1 },
+                    onUpdate: function() {
+                        const value = Math.ceil(this.targets()[0].textContent);
+                        element.textContent = value + suffix;
+                    }
+                }
+            );
+        }
+
+        // =========================================
+        // HEADER BEHAVIOR
+        // =========================================
+        
+        function initHeaderBehavior() {
+            // Header scroll effect
+            window.addEventListener('scroll', debounce(() => {
+                if (window.scrollY > 100) {
+                    elements.header.classList.add('scrolled');
+                } else {
+                    elements.header.classList.remove('scrolled');
+                }
+            }, 10));
+            
+            // Mobile menu toggle
+            if (elements.mobileMenuToggle) {
+                elements.mobileMenuToggle.addEventListener('click', () => {
+                    elements.nav.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    elements.nav.classList.remove('active');
+                // Add focus to the clicked section for accessibility
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.setAttribute('tabindex', '-1');
+                            targetElement.focus();
+                            setTimeout(() => targetElement.removeAttribute('tabindex'), 1000);
+                        }
+                    }
+                });
+            });
+        }
+
+        // =========================================
+        // STICKY PURCHASE MODULE
+        // =========================================
+        
+        function initStickyPurchase() {
+            window.addEventListener('scroll', debounce(() => {
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                // Show sticky purchase when scrolled past hero section
+                if (scrollPosition > windowHeight * 0.7 && scrollPosition < documentHeight - windowHeight * 1.5) {
+                    elements.stickyPurchase.classList.add('visible');
+                } else {
+                    elements.stickyPurchase.classList.remove('visible');
+                }
+            }, 10));
+        }
+
+        // =========================================
+        // FINANCING CALCULATOR
+        // =========================================
+        
+        function initFinancingCalculator() {
+            function updateMonthlyPrice() {
+                const price = parseFloat(elements.productPrice.value) || 9999;
+                const downPayment = parseFloat(elements.downPayment.value) || 0;
+                const loanTerm = parseInt(elements.loanTerm.value) || 24;
+                const interestRate = parseFloat(elements.interestRate.value) || 0;
+                
+                const principal = price - downPayment;
+                const monthly = calculateMonthlyPayment(principal, interestRate, loanTerm);
+                
+                if (elements.monthlyPrice) {
+                    // Animate the price change
+                    gsap.fromTo(elements.monthlyPrice,
+                        { scale: 1.2 },
+                        { 
+                            scale: 1, 
+                            duration: 0.3, 
+                            ease: "back.out(1.7)",
+                            onUpdate: function() {
+                                elements.monthlyPrice.textContent = formatCurrency(monthly);
+                            }
+                        }
+                    );
+                }
+            }
+            
+            // Add event listeners
+            if (elements.productPrice) {
+                elements.productPrice.addEventListener('input', updateMonthlyPrice);
+            }
+            if (elements.downPayment) {
+                elements.downPayment.addEventListener('input', updateMonthlyPrice);
+            }
+            if (elements.loanTerm) {
+                elements.loanTerm.addEventListener('change', updateMonthlyPrice);
+            }
+            if (elements.interestRate) {
+                elements.interestRate.addEventListener('input', updateMonthlyPrice);
+            }
+            
+            // Initial calculation
+            updateMonthlyPrice();
+        }
+
+        // =========================================
+        // FAQ ACCORDION
+        // =========================================
+        
+        function initFAQAccordion() {
+            elements.faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    elements.faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+                
+                // Keyboard accessibility
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        question.click();
+                    }
+                });
+            });
+        }
+
+        // =========================================
+        // MODAL HANDLING
+        // =========================================
+        
+        function initModalHandling() {
+            // Open demo modal
+            if (elements.reserveDemo) {
+                elements.reserveDemo.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(elements.demoModal);
+                });
+            }
+            
+            // Close modal with button
+            if (elements.modalClose) {
+                elements.modalClose.addEventListener('click', () => {
+                    closeModal(elements.demoModal);
+                });
+            }
+            
+            // Close modal with success button
+            if (elements.demoClose) {
+                elements.demoClose.addEventListener('click', () => {
+                    closeModal(elements.demoModal);
+                });
+            }
+            
+            // Close modal when clicking outside
+            if (elements.demoModal) {
+                elements.demoModal.addEventListener('click', (e) => {
+                    if (e.target === elements.demoModal) {
+                        closeModal(elements.demoModal);
+                    }
+                });
+            }
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && elements.demoModal.classList.contains('active')) {
+                    closeModal(elements.demoModal);
+                }
+            });
+            
+            // Demo form submission
+            if (elements.demoSubmit) {
+                elements.demoSubmit.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Basic form validation
+                    const firstName = document.getElementById('demo-first-name');
+                    const lastName = document.getElementById('demo-last-name');
+                    const email = document.getElementById('demo-email');
+                    const city = document.getElementById('demo-city');
+                    const state = document.getElementById('demo-state');
+                    const date = document.getElementById('demo-date');
+                    
+                    let isValid = true;
+                    
+                    // Simple validation - in a real app, you'd want more robust validation
+                    if (!firstName.value.trim()) {
+                        markInvalid(firstName);
+                        isValid = false;
+                    } else {
+                        markValid(firstName);
+                    }
+                    
+                    if (!lastName.value.trim()) {
+                        markInvalid(lastName);
+                        isValid = false;
+                    } else {
+                        markValid(lastName);
+                    }
+                    
+                    if (!email.value.trim() || !isValidEmail(email.value)) {
+                        markInvalid(email);
+                        isValid = false;
+                    } else {
+                        markValid(email);
+                    }
+                    
+                    if (!city.value.trim()) {
+                        markInvalid(city);
+                        isValid = false;
+                    } else {
+                        markValid(city);
+                    }
+                    
+                    if (!state.value.trim()) {
+                        markInvalid(state);
+                        isValid = false;
+                    } else {
+                        markValid(state);
+                    }
+                    
+                    if (!date.value) {
+                        markInvalid(date);
+                        isValid = false;
+                    } else {
+                        markValid(date);
+                    }
+                    
+                    if (isValid) {
+                        // Show loading state
+                        elements.demoSubmit.textContent = 'Processing...';
+                        elements.demoSubmit.disabled = true;
+                        
+                        // Simulate API call
+                        setTimeout(() => {
+                            elements.demoForm.style.display = 'none';
+                            elements.demoSuccess.classList.add('active');
+                            
+                            // In a real app, you would submit the form data to your server here
+                            console.log('Form submitted:', {
+                                firstName: firstName.value,
+                                lastName: lastName.value,
+                                email: email.value,
+                                phone: document.getElementById('demo-phone').value,
+                                city: city.value,
+                                state: state.value,
+                                date: date.value
+                            });
+                        }, 1500);
+                    }
+                });
+            }
+        }
+        
+        function openModal(modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus trap for accessibility
+            trapFocus(modal);
+        }
+        
+        function closeModal(modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset form
+            if (modal === elements.demoModal) {
+                elements.demoForm.style.display = 'block';
+                elements.demoSuccess.classList.remove('active');
+                elements.demoSubmit.textContent = 'Request Demo';
+                elements.demoSubmit.disabled = false;
+                elements.demoForm.reset();
+            }
+        }
+        
+        function markInvalid(element) {
+            element.style.borderColor = '#FF6B6B';
+        }
+        
+        function markValid(element) {
+            element.style.borderColor = '';
+        }
+        
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function trapFocus(modal) {
+            const focusableElements = modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            modal.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                }
+            });
+            
+            firstElement.focus();
+        }
+
+        // =========================================
+        // DEBUG PANEL
+        // =========================================
+        
+        function initDebugPanel() {
+            if (elements.debugToggle) {
+                elements.debugToggle.addEventListener('click', () => {
+                    elements.debugPanel.classList.toggle('active');
+                });
+            }
+            
+            if (elements.animationSpeed) {
+                elements.animationSpeed.addEventListener('input', (e) => {
+                    updateAnimationSpeed(parseFloat(e.target.value));
+                });
+            }
+            
+            if (elements.parallaxIntensity) {
+                elements.parallaxIntensity.addEventListener('input', (e) => {
+                    updateParallaxIntensity(e.target.value);
+                });
+            }
+            
+            if (elements.resetAnimations) {
+                elements.resetAnimations.addEventListener('click', resetAllAnimations);
+            }
+        }
+
+        // =========================================
+        // PERFORMANCE OPTIMIZATIONS
+        // =========================================
+        
+        function initPerformanceOptimizations() {
+            // Lazy load images
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+            
+            // Preload critical resources
+            const criticalResources = [
+                // Add paths to critical images or other resources
+            ];
+            
+            criticalResources.forEach(resource => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = resource;
+                link.as = resource.endsWith('.css') ? 'style' : 'image';
+                document.head.appendChild(link);
+            });
+        }
+
+        // =========================================
+        // ACCESSIBILITY ENHANCEMENTS
+        // =========================================
+        
+        function initAccessibility() {
+            // Add focus-visible class for keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('focus-visible');
+                }
+            });
+            
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('focus-visible');
+            });
+            
+            // Add ARIA labels to interactive elements
+            document.querySelectorAll('.btn').forEach(btn => {
+                if (!btn.getAttribute('aria-label') && btn.textContent.trim()) {
+                    btn.setAttribute('aria-label', btn.textContent.trim());
+                }
+            });
+        }
+
+        // =========================================
+        // INITIALIZATION
+        // =========================================
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize all components
+            initHeaderBehavior();
+            initHeroAnimations();
+            initScrollAnimations();
+            initCounterAnimations();
+            initStickyPurchase();
+            initFinancingCalculator();
+            initFAQAccordion();
+            initModalHandling();
+            initDebugPanel();
+            initPerformanceOptimizations();
+            initAccessibility();
+            
+            // Log initialization for debugging
+            console.log('ArcticFlow landing page initialized successfully');
+        });
+
+        // Handle errors gracefully
+        window.addEventListener('error', (e) => {
+            console.error('Error occurred:', e.error);
+            // In a production environment, you might want to send this to an error tracking service
+        });
+
+        // ===== LUXURY ENTRANCE ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial page load animations
+    setTimeout(() => {
+        // Hero section entrance
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.classList.add('hero-entrance');
+        }
+        
+        // Header animation
+        const header = document.getElementById('header');
+        if (header) {
+            header.style.opacity = '0';
+            header.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                header.style.transition = 'all 0.8s cubic-bezier(0.215, 0.610, 0.355, 1)';
+                header.style.opacity = '1';
+                header.style.transform = 'translateY(0)';
+            }, 500);
+        }
+    }, 300);
+    
+    // Scroll-triggered animations
+    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+    
+    const displayScrollElement = (element) => {
+        element.classList.add('animated');
+    };
+    
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.2)) {
+                displayScrollElement(el);
+            }
+        });
+    };
+    
+    // Initialize
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+    
+    // Initial check
+    handleScrollAnimation();
+    
+    // Add hover effects to cards
+    document.querySelectorAll('.about-card, .portfolio-item, .feature-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) rotate(1deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+    
+    // Parallax effect for hero background
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const heroBg = hero.querySelector('.hero-bg-elements');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        }
+    });
+    
+    console.log('🎭 Luxury Animations Loaded!');
+});
+
+// Add to your existing JavaScript
+function initImageLoading() {
+    // Lazy loading enhancement
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+            img.classList.add('loaded');
+        });
+    }
+}
+
+// Call this in your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+    initImageLoading();
+    // ... your other initialization code
+});
+
+    </script>
+
+    <!-- Analytics Placeholder -->
+    <!-- INSERT GA_MEASUREMENT_ID_HERE -->
+
+    <!-- Developer Notes -->
+    <!-- 
+        DEPLOYMENT INSTRUCTIONS:
+        1. Replace all image placeholders with actual high-quality images (see checklist below)
+        2. Add Lottie animation JSON for product visualization
+        3. Update all shop links to point to your actual e-commerce platform
+        4. Add your analytics tracking code
+        5. Test on multiple devices and browsers
+        6. Deploy to your web server or CDN
+
+        ASSET CHECKLIST:
+        - [ ] HERO_BACKGROUND: hero-bg-4k.jpg
+        - [ ] LOTTIE: product-rotation-animation.json
+        - [ ] FALLBACK_IMAGE: product-hero-3d.jpg
+        - [ ] EXPERIENCE_IMAGE_1: morning-reset-lifestyle.jpg
+        - [ ] EXPERIENCE_IMAGE_2: post-workout-recovery.jpg
+        - [ ] EXPERIENCE_IMAGE_3: corporate-wellness.jpg
+        - [ ] TESTIMONIAL_AVATAR_1: testimonial-athlete-1.jpg
+        - [ ] TESTIMONIAL_AVATAR_2: testimonial-executive-1.jpg
+        - [ ] TESTIMONIAL_AVATAR_3: testimonial-trainer-1.jpg
+        - [ ] TESTIMONIAL_AVATAR_4: testimonial-client-1.jpg
+        - [ ] TESTIMONIAL_AVATAR_5: testimonial-recovery-1.jpg
+        - [ ] TESTIMONIAL_AVATAR_6: testimonial-longterm-1.jpg
+        - [ ] VIDEO_TESTIMONIAL_1: testimonial-video-1-poster.jpg
+        - [ ] VIDEO_TESTIMONIAL_2: testimonial-video-2-poster.jpg
+        - [ ] TRUST_LOGO_1: nba-team-logo.png
+        - [ ] TRUST_LOGO_2: olympic-committee-logo.png
+        - [ ] TRUST_LOGO_3: fortune-500-company-logo.png
+        - [ ] TRUST_LOGO_4: medical-institution-logo.png
+        - [ ] PRODUCT_IMAGE_SMALL: product-thumbnail.jpg
+        - [ ] OPENGRAPH_IMAGE: social-preview-1200x630.jpg
+
+        TOTAL PLACEHOLDERS: 18
+    -->
+</body>
+</html>
